@@ -1,0 +1,38 @@
+<div *ngIf="actividad!=null" class="fondo">
+    <div *ngIf="actividad.Tipo_actividad==1" class="actividadImitacion">
+        <div class="frase">
+            <p>
+                {{fraseADecir}}
+            </p>
+        </div>
+        <div class="group_buttons">
+            <div class="buttons">
+                <button mat-button id="basic" type="submit" [disabled]="!speech.error"
+                    (click)="reproducirPalabra()">
+                    <mat-icon color="white">play_arrow</mat-icon>
+                </button>
+                <p>
+                    REPRODUCIR
+                </p>
+            </div>
+            <div class="buttons">
+                <button mat-button id="basic" type="submit" [disabled]="!speech.error"
+                    (click)="startService()">
+                    <mat-icon color="warn">mic</mat-icon>
+                </button>
+                <p>
+                    HABLAR
+                </p>
+            </div>
+            <div class="buttons">
+                <button mat-button id="basic" type="submit" [disabled]="!speech.error"
+                    (click)="enviarDatos()">
+                    <mat-icon color="warn">send</mat-icon>
+                </button>
+                <p>
+                    ENVIAR
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

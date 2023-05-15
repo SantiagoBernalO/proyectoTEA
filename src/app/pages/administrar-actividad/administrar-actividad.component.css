@@ -1,0 +1,27 @@
+.titulo{
+    width: 60%;
+    height: 8vh;
+    text-align: center;
+    background-color: #3f51b5;
+    margin: auto;
+    margin-top: 30px;
+    font-size: 2vw;
+    border-radius: 20px;
+    color: #ffff;
+    font-weight: 500;
+}
+
+.titulo p{
+    display: inline-block;
+}
+
+
+.tables{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+}
+table {
+    width: 90%;
+    position: static;
+    margin-top: 30px;
+}

@@ -1,0 +1,71 @@
+<div>
+  <div class="boton_information">
+    <button mat-raised-button [matMenuTriggerFor]="menu" color="primary" class="information_button">
+      <mat-icon>help_outline</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <mat-card class="information example-card">
+        <mat-card-title>Información del promedio</mat-card-title>
+        <mat-card-subtitle>Descripción del promedio</mat-card-subtitle>
+        <mat-card-content class="promedio">
+          <p>0%-32%</p>
+          <p>33%-65%</p>
+          <p>66%-100%</p>
+        </mat-card-content>
+        <mat-card-content class="promedio">
+          <p>BAJO(B)</p>
+          <p>ALTO(A)</p>
+          <p>SUPERIOR(S)</p>
+        </mat-card-content>
+      </mat-card>
+    </mat-menu>
+  </div>
+
+  <!--<h1 >Reporte</h1>-->
+  <div class="dashboard">
+    <div class="container">
+      <!--aca va el codigo para las actividades-->
+      <highcharts-chart *ngIf="chartOptions" [Highcharts]="Highcharts" [options]="chartOptions">
+      </highcharts-chart>
+    </div>
+  </div>
+  <button mat-raised-button (click)="generarReporte()" color="primary" class="information_button">
+    <mat-icon>article</mat-icon>
+    Generar Reporte
+  </button>
+  <div id="convert">
+    <div class="information card">
+      <div *ngIf="id_actividad_crypted!=0">
+        <mat-card class="information example-card">
+          <mat-card-title>Información de la actividad</mat-card-title>
+          <mat-card-subtitle>Descripción de la actividad</mat-card-subtitle>
+          <div *ngIf="actividadInfo.NombreActividad != null">
+            <mat-card-content>
+              <p>Nombre de la actividad : {{actividadInfo.NombreActividad}} </p>
+              <p>Descripción : {{actividadInfo.Descripcion}} </p>
+            </mat-card-content>
+          </div>
+        </mat-card>
+      </div>
+      <mat-card class="information example-card">
+        <mat-card-title>Información del niño</mat-card-title>
+        <mat-card-subtitle>Información personal</mat-card-subtitle>
+        <div *ngIf="usuarioPaciente.nombre != null">
+          <mat-card-content>
+            <p>Nombre de niño : {{usuarioPaciente.nombre}} {{usuarioPaciente.apellido}}</p>
+            <p>Grado de autismo : {{usuarioPaciente.grado_autismo}}</p>
+            <p>Edad : {{usuarioPaciente.edad}}</p>
+          </mat-card-content>
+        </div>
+      </mat-card>
+      <mat-card class="information example-card">
+        <mat-card-title>Promedio de la actividad</mat-card-title>
+        <mat-card-subtitle>Promedio en porcentaje</mat-card-subtitle>
+        <mat-card-content>
+          <p>El promedio evaludo hasta el: {{fecha_Hoy}}</p>
+          <p>Promedio acumulado: {{promedioTexto}}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

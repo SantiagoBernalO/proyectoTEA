@@ -1,0 +1,24 @@
+.example-card {
+    max-width: 400px;
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.activityCards{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  flex-direction: row;
+  overflow: hidden;
+  position: relative;
+}
+.card :hover{
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .activityCards{
+    flex-direction: column;
+  }
+}

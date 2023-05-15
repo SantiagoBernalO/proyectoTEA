@@ -1,0 +1,54 @@
+/*Estilo para la tabla*/
+.dashboard {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+.dashboard .container {
+  height: 40%;
+  width: 95%;
+}
+highcharts-chart{
+  display: block;
+  width: 90%;
+  height: 100%;
+}
+/* Estilos para el boton de informacion*/
+.boton_information{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10%;
+}
+
+.information example-card{
+  display: flex;
+  flex-direction: row;
+  width: 100px;
+}
+.promedio{
+  display: grid; 
+  grid-template-columns: repeat(auto-fit,minmax(4px,1fr));
+  grid-gap: 50px;
+}
+
+/*Esto es para la informacion*/
+.information {
+  display:flex; 
+  flex-flow: row;
+  width: 100%;
+}
+.card{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+  /*Pues se supone que es para dar un espacio entre las tajetas o sea para que no se sobrepongan*/
+  grid-gap: 10px;
+}
+.example-card {
+  margin-top: 2%;
+  margin-left: 5%;
+  width: 60%;
+  display: flex;
+  flex-flow: column;
+}
