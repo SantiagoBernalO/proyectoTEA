@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  HOST: 'https://teawebback20-23.eastus.cloudapp.azure.com/TEABack/api/',
+  HOST: 'http://20.168.239.145/TEABack/api/',
   TOKEN: 'token',
   firebase:{
     apiKey: "AIzaSyA0QAlCxmWmGe3YNFDN2uKnXgGhM0fSt9o",
