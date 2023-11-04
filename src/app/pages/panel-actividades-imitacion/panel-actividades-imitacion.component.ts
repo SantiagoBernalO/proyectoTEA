@@ -33,7 +33,7 @@ export class PanelActividadesImitacionComponent implements OnInit {
       this.listDeActividades(this.usuario.numero_documento.toString())
     }else{
       this.serviceUsuario.datosPaciente(this.usuario.numero_documento.toString()).subscribe(data=>{
-        
+
         this.pacienteDatos = data;
         this.listDeActividades(this.pacienteDatos.documento_docente)
       })
@@ -43,7 +43,7 @@ export class PanelActividadesImitacionComponent implements OnInit {
     do{
       this.idencrypted = CryptoJS.AES.encrypt(JSON.stringify(Id_actividad), 'secret key').toString();
     }while(this.idencrypted.includes('/'))
-    window.location.href = 'actividad/'+this.idencrypted;
+    window.location.href = '/#/actividad/'+this.idencrypted;
   }
 
   listDeActividades(documentoDocente:string){
@@ -56,7 +56,7 @@ export class PanelActividadesImitacionComponent implements OnInit {
   private delay(ms:number){
     return new Promise(resolve => setTimeout(resolve, ms));
   }
-  
+
 
   datos(){
     const helper = new JwtHelperService();
