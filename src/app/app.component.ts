@@ -113,7 +113,7 @@ export class AppComponent {
   }
 
   enviarRegistro(tipoDeRegistro) {
-    window.location.href = 'registro/' + tipoDeRegistro;
+    window.location.href = '/#/registro/' + tipoDeRegistro;
   }
 
   perfil() {
