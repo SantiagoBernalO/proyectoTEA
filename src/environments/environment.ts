@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  HOST: 'http://20.168.239.145/TEABack/api/',
+  HOST: 'http://localhost:60602/api/',
   TOKEN: 'token',
   firebase:{
     apiKey: "AIzaSyA0QAlCxmWmGe3YNFDN2uKnXgGhM0fSt9o",
