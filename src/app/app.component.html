@@ -7,7 +7,6 @@
     </button>
 
     <button class="welcome" mat-button [routerLink]="['/inicio']">Bienvenido {{usuario}}</button>
-
     <span class="example-spacer"></span>
     <button class="welcome2" mat-button>¿Quienes somos?</button>
     <div *ngIf="!flagSesion">
@@ -44,7 +43,7 @@
       </button>
     </mat-menu>
   </mat-toolbar>
-
+  <button type="button" class="btn btn-success">Success</button>
   <mat-drawer-container class="example-sidenav-content" autosize>
     <mat-drawer #drawer style="width: 200px" mode="side">
       <button mat-menu-item (click)="drawer.toggle()" style="cursor: pointer" [routerLink]="['/inicio']">
