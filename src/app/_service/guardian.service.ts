@@ -55,7 +55,7 @@ export class GuardianService implements CanActivate {
       else if ((url.includes('/perfil')) && (rol == 1 || rol == 2)) {
         return true
       }
-      //para registrar pacientes 
+      //para registrar pacientes
       else if ((url.includes('/registro/3')) && (rol == 1 || rol == 2)) {
         return true;
       }
@@ -63,10 +63,6 @@ export class GuardianService implements CanActivate {
         this.router.navigate(['']);
       }
     } catch (e) {
-      //registrar docente o acudiente
-      if ((url.includes('/registro/1')) || (url.includes('/registro/2'))) {
-        return true;
-      }
       this.router.navigate(['']);
     }
   }

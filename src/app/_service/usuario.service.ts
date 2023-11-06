@@ -6,6 +6,7 @@ import { Subject } from 'rxjs';
 import { UsuarioAcudiente } from '../_model/UsuarioAcudiente';
 import { UsuarioDocente } from '../_model/UsuarioDocente';
 import { UsuarioPaciente } from '../_model/UsuarioPaciente';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,13 @@ export class UsuarioService {
   tipoU= new Subject<boolean>();
 
   constructor(private http: HttpClient) { }
+
+  //servicio compartido tipo de registro
+  private data = new BehaviorSubject<string>('1');
+  registroActual = this.data.asObservable();
+  public cambioTipoRegistro(nuevoRegistro: string) {
+    this.data.next(nuevoRegistro);
+  }
 
   //Registro Acudiente, Docente y Niño
   public registrarAcudiente(user: UsuarioAcudiente){
@@ -39,7 +47,7 @@ export class UsuarioService {
   }
 
   //    Se invocan los servicios de actualizar
-  //Actualizar Docente 
+  //Actualizar Docente
   public putActulizarDocente(docenteNuevo:UsuarioDocente){
     return this.http.put<any>(`${this.url}/PutActualizarDatosDocente`,docenteNuevo);
   }
@@ -58,5 +66,5 @@ export class UsuarioService {
   public postAgregarTokenCompra(datosDocente:UsuarioDocente){
     return this.http.post<boolean>(`${this.url}/PostAgregarTokenCompra_envioDeCorreo`,datosDocente);
   }
-  
+
 }

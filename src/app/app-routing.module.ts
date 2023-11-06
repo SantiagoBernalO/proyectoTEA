@@ -47,7 +47,7 @@ const routes: Routes = [
   {path: 'actividadDemo', component: ActividadDemoComponent},
 
   //registro
-  {path: 'registro/:registroID', component: RegistrarComponent,canActivate: [GuardianService]},
+  {path: 'registro', component: RegistrarComponent},
 
   //Recuperar contraseña
   {path: 'recuperarClave', component: RecuperarClaveComponent},

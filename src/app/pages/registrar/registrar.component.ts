@@ -23,6 +23,8 @@ export class RegistrarComponent implements OnInit {
   private datosDocente = new UsuarioDocente();
   private datosAcudiente = new UsuarioAcudiente();
   private datosEstudiante = new UsuarioPaciente();
+  public tipoDeRegistro_ID: number;
+
   private rol;
   hide = true;
   disabled = true;
@@ -35,12 +37,11 @@ export class RegistrarComponent implements OnInit {
     private route: Router
   ) {}
 
-  public tipoDeRegistro_ID: number = Number(
-    this.route_ID.snapshot.params.registroID
-  );
-
   ngOnInit(): void {
-    //this.formulario();
+    //obtiene tipo de registro
+    this.usuarioService.registroActual.subscribe((data) => {
+      this.tipoDeRegistro_ID=Number(data);
+    });
   }
 
   //FORMULARIO PARA ACUDIENTE Y DOCENTE

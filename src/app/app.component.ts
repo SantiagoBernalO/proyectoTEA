@@ -113,7 +113,8 @@ export class AppComponent {
   }
 
   enviarRegistro(tipoDeRegistro) {
-    window.location.href = '/#/registro/' + tipoDeRegistro;
+    this.usuarioService.cambioTipoRegistro(tipoDeRegistro);
+    this.router.navigate(['/registro']);
   }
 
   perfil() {
