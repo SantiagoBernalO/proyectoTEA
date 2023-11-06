@@ -1,36 +1,33 @@
-.example-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-  }
-  
-  .example-full-width {
-    width: 100%;
-  }
+.general {
+  width: 100%;
+  height: 100%;
+  background-image: url("../../../assets/image/login.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+mat-card{
+  width: 25%;
+}
 
-  
-:host {
-    height: 100%;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-  
-  }
-  
-  .mat-form-field {
-    width: 100%;
-    min-width: 300px;
-  }
-  mat-card-title,
-  mat-card-content {
-    display: flex;
-    justify-content: center;
-  }
-  
-  button {
-    width: 100%;
-  }
-  
-  .error{
-    color: crimson;
-  }
+mat-card-title,
+mat-card-content {
+  display: flex;
+  justify-content: center;
+}
+
+.mat-form-field {
+  width: 100%;
+  min-width: 300px;
+}
+
+button {
+  width: 100%;
+}
+
+.error {
+  color: crimson;
+}
