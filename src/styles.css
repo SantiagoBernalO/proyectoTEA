@@ -3,6 +3,14 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+/*estilos boostrap*/
+.container-fluid {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+/**/
+
 /*permite asignar estilos al coponente de inicio*/
 /*begin-commonstyles library*//*!
  * froala_editor v4.0.6 (https://www.froala.com/wysiwyg-editor)
@@ -15,7 +23,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     display: block;
     content: "";
     height: 0; }
-  
+
   .fr-hide-by-clipping {
     position: absolute;
     width: 1px;
@@ -25,7 +33,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
     border: 0; }
-  
+
   .fr-view img.fr-rounded, .fr-view .fr-img-caption.fr-rounded img {
     border-radius: 10px;
     -moz-border-radius: 10px;
@@ -33,25 +41,25 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     -moz-background-clip: padding;
     -webkit-background-clip: padding-box;
     background-clip: padding-box; }
-  
+
   .fr-view img.fr-shadow, .fr-view .fr-img-caption.fr-shadow img {
     -webkit-box-shadow: 10px 10px 5px 0px #cccccc;
     -moz-box-shadow: 10px 10px 5px 0px #cccccc;
     box-shadow: 10px 10px 5px 0px #cccccc; }
-  
+
   .fr-view img.fr-bordered, .fr-view .fr-img-caption.fr-bordered img {
     border: solid 5px #CCC; }
-  
+
   .fr-view img.fr-bordered {
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
     box-sizing: content-box; }
-  
+
   .fr-view .fr-img-caption.fr-bordered img {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
-  
+
   .fr-view {
     word-wrap: break-word; }
     .fr-view span[style~="color:"] a {
@@ -295,7 +303,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
       background-clip: padding-box; }
     .fr-view button.fr-large, .fr-view input.fr-large, .fr-view textarea.fr-large {
       font-size: 24px; }
-  
+
   /**
    * Image style.
    */
@@ -303,7 +311,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     font-weight: 700; }
   a.fr-view.fr-green {
     color: green; }
-  
+
   /**
    * Link style.
    */
@@ -336,7 +344,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
         float: right;
         margin: 5px 0 5px 5px;
         max-width: calc(100% - 5px); }
-  
+
   span.fr-img-caption.fr-view {
     position: relative;
     max-width: 100%; }
@@ -16420,21 +16428,21 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   /*begin-commonstyles photoswipe-default*/
   /*! PhotoSwipe Default UI CSS by Dmitry Semenov | photoswipe.com | MIT license */
   /*
-  
+
       Contents:
-  
+
       1. Buttons
       2. Share modal and links
       3. Index indicator ("1 of X" counter)
       4. Caption
       5. Loading indicator
       6. Additional styles (root element, top bar, idle state, hidden state, etc.)
-  
+
   */
   /*
-  
+
       1. Buttons
-  
+
    */
   /* <button> css reset */
   .pswp__button {
@@ -16557,9 +16565,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     background-position: -94px -44px;
   }
   /*
-  
+
       2. Share modal/popup and links
-  
+
    */
   .pswp__counter,
   .pswp__share-modal {
@@ -16662,9 +16670,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     background: #DDD;
   }
   /*
-  
+
       3. Index indicator ("1 of X" counter)
-  
+
    */
   .pswp__counter {
     position: absolute;
@@ -16678,9 +16686,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     padding: 0 10px;
   }
   /*
-  
+
       4. Caption
-  
+
    */
   .pswp__caption {
     position: absolute;
@@ -16710,11 +16718,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     visibility: hidden;
   }
   /*
-  
+
       5. Loading indicator (preloader)
-  
+
       You can play with it here - http://codepen.io/dimsemenov/pen/yyBWoR
-  
+
    */
   .pswp__preloader {
     width: 44px;
@@ -16812,9 +16820,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     }
   }
   /*
-  
+
       6. Additional styles
-  
+
    */
   /* root element of UI */
   .pswp__ui {
@@ -16960,9 +16968,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     --animation-custom_in-scale: 1;
     --animation-custom_in-rotate: 0deg;
     --animation-custom_in-opacity: 0;
-    
-    
-    
+
+
+
   }
   @keyframes bounce {
     from,
@@ -18473,11 +18481,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   }
   /*end-commonstyles animation*/
   .animated.u-absolute-hcenter {
-    
+
     --animation-custom_in-translate_x: -50% !important;
   }
   .animated.u-absolute-vcenter {
-    
+
     --animation-custom_in-translate_y: -50% !important;
   }
   .u-cookies-consent {
@@ -36184,110 +36192,110 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     color: #1a1a1a !important;
   }
   /*end-variables colors*/
-  
+
   /*begin-variables sitestylecss*/
-  
-  
-  
+
+
+
           .u-body
           {
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           --theme-sheet-width-xl: 1140px;
           --theme-sheet-width-lg: 940px;
           --theme-sheet-width-md: 720px;
           --theme-sheet-width-sm: 540px;
           --theme-sheet-width-xs: 340px;
-          
-          
-          
-          
-          
-          
+
+
+
+
+
+
           }
-  
+
           /** common-rules **/
           h1.u-title
           {
@@ -36404,7 +36412,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
           margin-bottom: 20px;
           }
           /** common-rules **/
-  
+
           /** publish-rules **/
           /*begin-media rules*/
           @media (max-width: 767px) {
@@ -36445,9 +36453,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
           }
           /*end-media rules*/
           /** publish-rules **/
-  
-          
-  
+
+
+
           /** cms-rules **/
           /*begin-responsive rules*/
           .u-sm h1.u-title
@@ -36476,7 +36484,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
           }
           /*end-responsive rules*/
           /** cms-rules **/
-  
+
           /** color-rules **/
           .u-overlap.u-overlap-transparent:not(.u-overlap-contrast) .u-header :not(.u-nav-item) > a,
           .u-gradient > .u-container-layout > a,
@@ -36532,7 +36540,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
           border-color: #478ac9;
           }
           /** color-rules **/
-  
+
           /** alt-color-rules **/
           .u-body-color a,.u-palette-1-base a,.u-palette-1-dark-3 a,.u-palette-1-dark-2 a,.u-palette-1-dark-1 a,.u-palette-1 a,.u-palette-1-light-1 a,.u-palette-2-base a,.u-palette-2-dark-3 a,.u-palette-2-dark-2 a,.u-palette-2-dark-1 a,.u-palette-2 a,.u-palette-2-light-1 a,.u-palette-3-dark-3 a,.u-palette-3-dark-2 a,.u-palette-3-dark-1 a,.u-palette-4-base a,.u-palette-4-dark-3 a,.u-palette-4-dark-2 a,.u-palette-4-dark-1 a,.u-palette-5-dark-3 a,.u-palette-5-dark-2 a,.u-palette-5-dark-1 a,.u-grey-40 a,.u-grey-30 a,.u-grey-90 a,.u-grey-80 a,.u-grey-75 a,.u-black a,.u-grey-70 a,.u-grey-60 a,.u-grey-50 a,.u-grey-dark-3 a,.u-grey-dark-2 a,.u-grey-dark-1 a,.u-grey a,.u-shading a,.u-overlap-contrast .u-header a:not(.u-nav-link):not(.u-btn)
           {
@@ -36558,38 +36566,38 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
           color: #ffffff;
           }
           /** alt-color-rules **/
-      
-  
-  
+
+
+
   /*end-variables sitestylecss*/
    .u-header {
     background-image: none;
   }
-  
+
   .u-header .u-sheet-1 {
     min-height: 80px;
   }
-  
+
   .u-header .u-image-1 {
     width: 64px;
     height: 32px;
     margin: 22px auto 0 0;
   }
-  
+
   .u-header .u-logo-image-1 {
     width: 100%;
     height: 100%;
   }
-  
+
   .u-header .u-menu-1 {
     margin: -32px 0 22px auto;
   }
-  
+
   .u-header .u-nav-1 {
     font-size: 1rem;
     letter-spacing: 0px;
   }
-  
+
   .u-header .u-nav-2 {
     font-size: 1.25rem;
   }
@@ -36598,17 +36606,17 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
       width: auto;
     }
   }
-  
-  
-  
+
+
+
    .u-footer {
     background-image: none;
   }
-  
+
   .u-footer .u-sheet-1 {
     min-height: 120px;
   }
-  
+
   .u-footer .u-text-1 {
     width: 417px;
     margin: 49px auto;
@@ -36632,12 +36640,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     .u-footer .u-sheet-1 {
       min-height: 36px;
     }
-  
+
     .u-footer .u-text-1 {
       width: 340px;
     }
   }
-  
-   /*begin-variables base-font-size*/ 
+
+   /*begin-variables base-font-size*/
    html { font-size: 16px; }
    /*end-variables base-font-size*/
