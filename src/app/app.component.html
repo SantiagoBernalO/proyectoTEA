@@ -8,7 +8,6 @@
 
     <button class="welcome" mat-button [routerLink]="['/inicio']">Bienvenido {{usuario}}</button>
     <span class="example-spacer"></span>
-    <button class="welcome2" mat-button>¿Quienes somos?</button>
     <div *ngIf="!flagSesion">
       <button mat-raised-button target="_blank" [matMenuTriggerFor]="menuR">Registrese</button>
       <mat-menu #menuR="matMenu">
@@ -43,7 +42,7 @@
       </button>
     </mat-menu>
   </mat-toolbar>
-  <button type="button" class="btn btn-success">Success</button>
+
   <mat-drawer-container class="example-sidenav-content" autosize>
     <mat-drawer #drawer style="width: 200px" mode="side">
       <button mat-menu-item (click)="drawer.toggle()" style="cursor: pointer" [routerLink]="['/inicio']">
@@ -148,14 +147,12 @@
       </div>
       <button mat-menu-item (click)="drawer.toggle()" style="cursor: pointer">
         <mat-icon>picture_as_pdf</mat-icon>
-        <a style="color: black;" href="../../../assets/documents/MANUAL DE USUARIO.pdf" target="_blank" >Manual De Usuario</a>
+        <a style="color: black;" href="../../../assets/documents/MANUAL DE USUARIO.pdf" target="_blank">Manual De
+          Usuario</a>
       </button>
     </mat-drawer>
-    <div class="example-sidenav-content">
-      <router-outlet></router-outlet>
-    </div>
-    <p>
+
+    <router-outlet></router-outlet>
 
   </mat-drawer-container>
-
 </div>
