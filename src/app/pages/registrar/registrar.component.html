@@ -1,8 +1,9 @@
 <div class="container-fluid" style="height: 100vh;">
   <div class="row" style="height: 100vh;">
     <div class="col-md-7 col-lg-7 custom-column">
-      <div class="imgRegistroDocente">
-
+      <div *ngIf="tipoDeRegistro_ID==1" class="imgRegistroDocente">
+      </div>
+      <div *ngIf="tipoDeRegistro_ID==2" class="imgRegistroAcudiente">
       </div>
     </div>
     <div class="col-md-5 col-lg-5 custom-column">
@@ -19,6 +20,7 @@
               <mat-form-field appearance="outline">
                 <mat-label class="textC">Nombre</mat-label>
                 <input matInput placeholder="Juan David" formControlName="nombre"  >
+                <mat-icon matSuffix>person</mat-icon>
                 <mat-hint *ngIf="formR.get('nombre').errors && formR.get('nombre').touched">
                   <p *ngIf="formR.get('nombre').hasError('required')" style="margin: 0;">
                     Se requiere este campo
@@ -39,6 +41,7 @@
               <mat-form-field appearance="outline"  >
                 <mat-label>Apellido</mat-label>
                 <input matInput placeholder="Castro Lopez" formControlName="apellido"  >
+                <mat-icon matSuffix>person</mat-icon>
                 <mat-hint *ngIf="formR.get('apellido').errors && formR.get('apellido').touched">
                   <p *ngIf="formR.get('apellido').hasError('required')" style="margin: 0;">
                     Se requiere este campo
@@ -58,6 +61,7 @@
               <mat-form-field appearance="outline"  >
                 <mat-label  >Documento</mat-label>
                 <input matInput placeholder="1010101012" formControlName="documento"  >
+                <mat-icon matSuffix>person</mat-icon>
                 <mat-hint *ngIf="formR.get('documento').errors && formR.get('documento').touched">
                   <p *ngIf="formR.get('documento').hasError('required')" style="margin: 0;">
                     Se requiere este campo
@@ -100,6 +104,7 @@
               <mat-form-field appearance="outline"  >
                 <mat-label>Correo</mat-label>
                 <input matInput placeholder="abc@gmail.com" formControlName="correo"   type="email">
+                <mat-icon matSuffix>alternate_email</mat-icon>
                 <mat-hint *ngIf="formR.get('correo').errors && formR.get('correo').touched">
                   <p *ngIf="formR.get('correo').hasError('required')" style="margin: 0;">
                     Se requiere este campo

@@ -7,6 +7,15 @@
   background-size: cover;
 }
 
+.imgRegistroAcudiente{
+  width: 100%;
+  height: 100%;
+  background-image: url("../../../assets/image/registroAcudiente.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 .custom-column{
   padding: 0;
 }
