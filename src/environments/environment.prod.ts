@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  HOST: 'http://20.83.181.37/TEABack/api/',
+  HOST: 'https://autismoinclusivo.eastus.cloudapp.azure.com/teaback/api/',
   TOKEN: 'token',
   firebase:{
     apiKey: "AIzaSyA0QAlCxmWmGe3YNFDN2uKnXgGhM0fSt9o",
