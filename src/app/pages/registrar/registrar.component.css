@@ -20,23 +20,21 @@
   padding: 0;
 }
 
-.container_titulo {
-  height: 10%;
-  padding: 1em;
-  background-color: rgb(212, 212, 212);
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  text-align: center;
-}
-
-.titulo {
-  font-size: 2vw;
+.titulo{
+  font-size: 1.8vw;
   color: #000000;
 }
 
+.logo{
+  width: 30%;
+}
+
+.logo img{
+  width: 100%;
+}
+
 .container_formulario{
-  height: 90%;
+  height: 70%;
   display: flex;
   justify-content: center;
   align-items: center;

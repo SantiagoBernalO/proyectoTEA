@@ -1,5 +1,5 @@
 <div class="container-fluid" style="height: 100vh;">
-  <div class="row" style="height: 100vh;">
+  <div class="row" style="margin: 0; height: 100vh;">
     <div class="col-md-7 col-lg-7 custom-column">
       <div *ngIf="tipoDeRegistro_ID==1" class="imgRegistroDocente">
       </div>
@@ -7,10 +7,17 @@
       </div>
     </div>
     <div class="col-md-5 col-lg-5 custom-column">
-      <div class="container_titulo">
-        <p *ngIf="tipoDeRegistro_ID==1" class="titulo">DOCENTE REGISTRATE AQUÍ</p>
-        <p *ngIf="tipoDeRegistro_ID==2" class="titulo">ACUDIENTE REGISTRATE AQUÍ</p>
-        <p *ngIf="tipoDeRegistro_ID==3" class="titulo">REGISTRAR ESTUDIANTE</p>
+      <div class="row" style="margin: 0; height: 30%;">
+        <div class="col-md-8 col-lg-8 custom-column"
+          style="height: 100%; display: flex; align-items: center; text-align: center; justify-content: center;">
+          <p *ngIf="tipoDeRegistro_ID==1" class="titulo">DOCENTE REGISTRATE AQUÍ</p>
+          <p *ngIf="tipoDeRegistro_ID==2" class="titulo">ACUDIENTE REGISTRATE AQUÍ</p>
+          <p *ngIf="tipoDeRegistro_ID==3" class="titulo">REGISTRAR ESTUDIANTE</p>
+        </div>
+        <div class="col-md-4 col-lg-4 custom-column"
+          style="height: 100%; display: flex; align-items: center; text-align: center; justify-content: center;">
+          <img src="/assets/image/logotipo2.png" alt="" style="width: 90%;">
+        </div>
       </div>
       <div class="container_formulario">
         <!--Formulario para acudiente y docente-->
