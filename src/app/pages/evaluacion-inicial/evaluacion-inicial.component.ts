@@ -113,6 +113,7 @@ export class EvaluacionInicialComponent implements OnInit, PopupComponent {
   ) {}
 
   ngOnInit(): void {
+
     //carga datos de usuario por sesion
     this.datosSesion();
     console.log("nombre ",this.usuario)
@@ -259,13 +260,24 @@ export class EvaluacionInicialComponent implements OnInit, PopupComponent {
   //CONFIGURACION DE VIDEO
   //Inicializacion del metodo para YT Iframe consumiendo la API
   initVideo() {
-    var tag = document.createElement('script');
-    tag.src = 'http://www.youtube.com/iframe_api';
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    return new Promise<void>((resolve, reject) => {
+      try {
+        if (window['YT'] && typeof window['YT'].Player === 'function') {
+            resolve();
+        } else {
+            var tag = document.createElement('script');
+            tag.src = 'https://www.youtube.com/iframe_api';
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-    // crea el iframe despues de el consumo de la API
-    window['onYouTubeIframeAPIReady'] = () => this.startVideo();
+            window['onYouTubeIframeAPIReady'] = () => resolve();
+        }
+    } catch (e) {
+        reject(e);
+    }
+    })
+      .then(() => this.startVideo())
+      .catch((error) => console.log(error));
   }
   //Inicializacion del Iframe, definicion de sus caracteristicas y reproduccion del video
   startVideo() {
