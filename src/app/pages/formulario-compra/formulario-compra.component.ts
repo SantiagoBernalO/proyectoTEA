@@ -51,10 +51,11 @@ export class FormularioCompraComponent implements OnInit {
     this.usser = this.form_compra.value;
     this.usuarioService.postAgregarTokenCompra(this.usser).subscribe(
       (data) => {
+        console.log(data);
         if(data == true){
           this.openSnackBar('Revisa tu correo');
         }else if(data == false){
-          this.openSnackBar('Ya tienes una cuenta activa');
+          this.openSnackBar('Ya tienes una cuenta activa, ve a registrarte o a iniciar sesion');
         }else{
           this.openSnackBar('¡Ops! contacta con el administrador '+ data);
         }

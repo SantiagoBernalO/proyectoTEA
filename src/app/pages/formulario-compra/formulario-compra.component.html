@@ -1,76 +1,75 @@
-<div class="contenedor">
-    <div class="principal">
-        <div class="principal-titulo">
-            <div class="titulo">COMPRA AQUÍ AUTIWEB</div>
-        </div>
-        <div class="principal-datos">
-            <div class="formu">
-                <form [formGroup]="form_compra" #frmActividad="ngForm" class="form-inline">
-                    <div class="campo_texto">
-                        <mat-form-field appearance="outline" class="tamano">
-                            <input type="text" matInput placeholder="Nombre" formControlName="nombre" />
-                            <mat-hint *ngIf="form_compra.get('nombre').errors && form_compra.get('nombre').touched">
-                                <p *ngIf="form_compra.get('nombre').hasError('required')">
-                                    *Se requiere este campo
-                                </p>
-                                <p *ngIf="form_compra.get('nombre').hasError('minlength')">
-                                    *Minimo 4 caracteres
-                                </p>
-                                <p *ngIf="form_compra.get('nombre').hasError('maxlength')">
-                                    *Maximo 15 caracteres
-                                </p>
-                                <p *ngIf="form_compra.get('nombre').hasError('pattern')">
-                                    El nombre solo debe contener letras
-                                </p>
-                            </mat-hint>
-                        </mat-form-field>
-                    </div>
-                    <div class="campo_texto">
-                        <mat-form-field appearance="outline" class="tamano">
-                            <input type="text" matInput placeholder="Cedula" formControlName="documento" />
-                            <mat-hint
-                                *ngIf="form_compra.get('documento').errors && form_compra.get('documento').touched">
-                                <p *ngIf="form_compra.get('documento').hasError('required')">
-                                    *Se requiere este campo
-                                </p>
-                                <p *ngIf="form_compra.get('documento').hasError('minlength')">
-                                    *Minimo 9 caracteres
-                                </p>
-                                <p *ngIf="form_compra.get('documento').hasError('maxlength')">
-                                    *Maximo 11 caracteres
-                                </p>
-                                <p *ngIf="form_compra.get('documento').hasError('pattern')">
-                                    El username solo debe contener numero
-                                </p>
-                            </mat-hint>
-                        </mat-form-field>
-                    </div>
-                    <div class="campo_texto">
-                        <mat-form-field appearance="outline" class="tamano">
-                            <input type="email" ngModel email="true" matInput placeholder="Correo" formControlName="correo" type="email"/>
-                            <mat-hint *ngIf="form_compra.get('correo').errors && form_compra.get('correo').touched">
-                                <p *ngIf="form_compra.get('correo').hasError('required')">
-                                    *Se requiere este campo
-                                </p>
-                                <p *ngIf="form_compra.get('correo').hasError('minlength')">
-                                    *Minimo 3 caracteres
-                                </p>
-                                <p *ngIf="form_compra.get('correo').hasError('maxlength')">
-                                    *Maximo 50 caracteres
-                                </p>
-                                <p *ngIf="form_compra.get('correo').hasError('pattern')">
-                                    Debe contener un @ en el correo
-                                </p>
-                            </mat-hint>
-                        </mat-form-field>
-                    </div>
-                    <button color="primary" type="submit" mat-raised-button [disabled]="form_compra.invalid" 
-                        (click)="enviarDatos($event)">Enviar mis datos</button>
-                </form>
+<div class="formulario">
+    <!-- Titulo -->
+    <div class="principal-titulo">
+        <div class="titulo">COMPRA AQUÍ AUTIWEB</div>
+    </div>
+    <!-- Formulario -->
+    <div class="contenedor">
+        <form [formGroup]="form_compra" #frmActividad="ngForm" class="form-inline">
+            <div>
+                <mat-form-field appearance="outline" class="tamano">
+                    <mat-label class="textC">Nombre</mat-label>
+                    <input type="text" matInput placeholder="Andres Quintero" formControlName="nombre" />
+                    <mat-hint *ngIf="form_compra.get('nombre').errors && form_compra.get('nombre').touched">
+                        <p *ngIf="form_compra.get('nombre').hasError('required')" class="mensaje">
+                            *Se requiere este campo
+                        </p>
+                        <p *ngIf="form_compra.get('nombre').hasError('minlength')" class="mensaje">
+                            *Minimo 4 caracteres
+                        </p>
+                        <p *ngIf="form_compra.get('nombre').hasError('maxlength')" class="mensaje">
+                            *Maximo 15 caracteres
+                        </p>
+                        <p *ngIf="form_compra.get('nombre').hasError('pattern')" class="mensaje">
+                            El nombre solo debe contener letras
+                        </p>
+                    </mat-hint>
+                </mat-form-field>
             </div>
-        </div>
+            <div>
+                <mat-form-field appearance="outline" class="tamano">
+                    <mat-label class="textC">Cedula</mat-label>
+                    <input type="text" matInput placeholder="122653234" formControlName="documento" />
+                    <mat-hint
+                        *ngIf="form_compra.get('documento').errors && form_compra.get('documento').touched">
+                        <p *ngIf="form_compra.get('documento').hasError('required')" class="mensaje">
+                            *Se requiere este campo
+                        </p>
+                        <p *ngIf="form_compra.get('documento').hasError('minlength')" class="mensaje">
+                            *Minimo 9 caracteres
+                        </p>
+                        <p *ngIf="form_compra.get('documento').hasError('maxlength')" class="mensaje">
+                            *Maximo 11 caracteres
+                        </p>
+                        <p *ngIf="form_compra.get('documento').hasError('pattern')" class="mensaje">
+                            El username solo debe contener numero
+                        </p>
+                    </mat-hint>
+                </mat-form-field>
+            </div>
+            <mat-form-field appearance="outline" class="tamano">
+                <mat-label class="textC">Correo</mat-label>
+                <input type="email" ngModel email="true" matInput placeholder="andres.quintero@gmail.com" formControlName="correo" type="email"/>
+                <mat-hint *ngIf="form_compra.get('correo').errors && form_compra.get('correo').touched">
+                    <p *ngIf="form_compra.get('correo').hasError('required')" class="mensaje">
+                        *Se requiere este campo
+                    </p>
+                    <p *ngIf="form_compra.get('correo').hasError('minlength')" class="mensaje">
+                        *Minimo 3 caracteres
+                    </p>
+                    <p *ngIf="form_compra.get('correo').hasError('maxlength')" class="mensaje">
+                        *Maximo 50 caracteres
+                    </p>
+                    <p *ngIf="form_compra.get('correo').hasError('pattern')" class="mensaje">
+                        Debe contener un @ en el correo
+                    </p>
+                </mat-hint>
+            </mat-form-field>
+            <button color="primary" type="submit" mat-raised-button [disabled]="form_compra.invalid"
+            (click)="enviarDatos($event)">Realizar Compra</button>
+        </form>
     </div>
-    <div class="secundario">
-        <p>Nos contacteremos contigo para realizar la compra. Pago anual por solo $50.000 Cop</p>
-    </div>
+</div>
+<div class="secundario">
+    <p>Nos contacteremos contigo para realizar la compra. Pago anual por solo $50.000 Cop</p>
 </div>

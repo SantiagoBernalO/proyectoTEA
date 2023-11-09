@@ -1,30 +1,27 @@
-.contenedor {
-  width: 80%;
-  height: 100vh;
-  margin: auto;
-  text-align: center;
-}
-
-.principal {
+.formulario {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 60%;
-  height: 60%;
+  height: 70%;
   background-color: #3f51b5;
   border-radius: 100px;
-  margin: auto;
-  margin-top: 10vh;
+  margin: 10vh auto auto;
 }
 
+/* Diseño para los tiulos */
 .principal-titulo {
-  width: 90%;
-  height: 15%;
-  background-color: #ffffff;
-  margin: auto;
-  margin-top: 10%;
-  border:5px solid #3f51b5;
-  border-radius: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 87%;
+    height: 13%;
+    background-color: #ffffff;
+    border: 5px solid #3f51b5;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -48px;
 }
 
 .principal-titulo .titulo {
@@ -32,31 +29,28 @@
   font-size: 2vw;
 }
 
-.principal-datos {
-  width: 50%;
-  height: 75%;
-  border-radius: 100px;
-  background-color: #ffffff;
-  color: #3f51b5;
-  margin: auto;
+/* Diseño para los campos de registro */
+.contenedor {
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 45%;
+  text-align: center;
+  margin-top: 1%;
 }
-
-.formu{
-    width: 100%;
-    height: 80%;
-    padding-top: 10%;
-}
-
-.campo_texto {
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  color: #000000;
-}
-
 .tamano {
   width: 100%;
-  height: 100px;
 }
 
+.mensaje{
+  margin-top: 0%;
+}
 
+/* Diseño del mensaje de la parte inferior */
+.secundario{
+  font-family: 'Arial', sans-serif;
+  width: 50%;
+  height: 70%;
+  margin-left: 27%;
+}
