@@ -127,8 +127,8 @@
           <mat-divider></mat-divider>
         </div>
       </div>
-      <div [hidden]="!flagSesion">
-        <div *ngIf="rol==1">
+      <div>
+        <div>
           <button mat-menu-item (click)="drawer.toggle()" style="cursor: pointer" [routerLink]="['/actividadDemo']">
             <mat-icon>keyboard_voice</mat-icon>
             <span>Actividad Demo</span>
