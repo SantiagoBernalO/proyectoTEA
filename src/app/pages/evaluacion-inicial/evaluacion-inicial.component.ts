@@ -11,6 +11,7 @@ import { environment } from 'src/environments/environment';
 import { Usuario } from 'src/app/_model/Usuario';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { UsuarioService } from 'src/app/_service/usuario.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-evaluacion-inicial',
@@ -110,13 +111,13 @@ export class EvaluacionInicialComponent implements OnInit, PopupComponent {
     //mensaje emergente
     private snackBar: MatSnackBar,
     private usuarioService: UsuarioService,
+    private SpinnerService: NgxSpinnerService
   ) {}
 
   ngOnInit(): void {
-
+    this.SpinnerService.show();
     //carga datos de usuario por sesion
     this.datosSesion();
-    console.log("nombre ",this.usuario)
     if(this.usuario.tipo_usuario_id==1){
       this.usuarioService.datosDocente(this.usuario.numero_documento.toString()).subscribe(datosDocente=>{
         this.nombreDocente = datosDocente.nombre.toLocaleUpperCase();
@@ -134,6 +135,7 @@ export class EvaluacionInicialComponent implements OnInit, PopupComponent {
     this.initVideo();
     //pre carga los servicios de la siguiente actividad
     this.activityLoad(this.avanceModulo + 1);
+    this.SpinnerService.hide();
   }
 
   private buildFrom() {
@@ -480,6 +482,7 @@ export class EvaluacionInicialComponent implements OnInit, PopupComponent {
   }
 
   cargaContenidoActividad() {
+    this.SpinnerService.show();
     //despintar botones
     this.cambioColorFuenteYboton(
       'opcion-txt-activate-right',
@@ -517,6 +520,8 @@ export class EvaluacionInicialComponent implements OnInit, PopupComponent {
     });
     //Desactivar bandera de respuesta
     this.respuestaBandera = false;
+    this.SpinnerService.hide();
+
   }
   //------------------------------------------------------------------------------------
 
@@ -691,7 +696,6 @@ export class EvaluacionInicialComponent implements OnInit, PopupComponent {
       const helper = new JwtHelperService();
       let token = sessionStorage.getItem(environment.TOKEN);
       const decodedToken = helper.decodeToken(token);
-      console.log(decodedToken)
       this.usuario.numero_documento = decodedToken.Usuario;
       this.usuario.tipo_usuario_id = decodedToken.Rol;
     } catch (e) {

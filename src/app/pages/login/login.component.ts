@@ -6,6 +6,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { LoginService } from 'src/app/_service/login.service'
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-login',
@@ -22,28 +23,31 @@ export class LoginComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
     private loginService: LoginService,
     private router: Router,
-    private snackBar: MatSnackBar,) { }
+    private snackBar: MatSnackBar,
+    private SpinnerService: NgxSpinnerService) { }
 
   ngOnInit(): void {
     this.buildFrom();
   }
   private buildFrom() {
-    
-    this.formul = this.formBuilder.group({    
+
+    this.formul = this.formBuilder.group({
       documento: [this.usser.documento, [Validators.required,Validators.maxLength(15), Validators.minLength(3),Validators.pattern('[0-9]*')]],
       clave: [this.usser.clave, [Validators.required,Validators.minLength(4), Validators.maxLength(15)]],
     });
   }
 
   ingresar(event: Event){
+    this.SpinnerService.show();
     this.usser = this.formul.value;
     this.loginService.login(this.usser).subscribe(data =>{
-      
       sessionStorage.setItem(environment.TOKEN, data.Token);
       this.loginService.paginaReactiva.next(true);
+      this.SpinnerService.hide();
       this.openSnackBar("Ingreso correctamente");
       this.router.navigate(['inicio']);
     }, err => {
+      this.SpinnerService.hide();
       this.openSnackBar("Usuario o contraseña Incorrecta\nIntente nuevamente");
     });
   }
@@ -54,6 +58,6 @@ export class LoginComponent implements OnInit {
       horizontalPosition: 'center',
       verticalPosition: 'top',
     });
-  } 
+  }
 
 }

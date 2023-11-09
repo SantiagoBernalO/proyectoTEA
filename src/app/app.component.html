@@ -19,7 +19,7 @@
     <div *ngIf="rol !=3 && flagSesion ">
       <button mat-raised-button target="_blank" [matMenuTriggerFor]="menu">Registrar</button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item [routerLink]="['registro/3']">Registrar Estudiante</button>
+        <button mat-menu-item (click)="enviarRegistro(3)">Registrar Estudiante</button>
       </mat-menu>
     </div>
 
@@ -153,6 +153,10 @@
     </mat-drawer>
 
     <router-outlet></router-outlet>
+
+    <ngx-spinner bdColor="rgba(160,112,255,0.5)" size="medium" color = "#fff" type="pacman">
+      <p style="color: white">Cargando...</p>
+      </ngx-spinner>
 
   </mat-drawer-container>
 </div>
