@@ -1,11 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 import { RegistrarComponent } from './pages/registrar/registrar.component';
 import { MaterialModule } from './material/material.module'
@@ -79,6 +80,7 @@ import { NuevaClaveComponent } from './pages/nueva-clave/nueva-clave.component';
     BrowserAnimationsModule,
     HttpClientModule,
     MaterialModule,
+    NgxSpinnerModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
@@ -101,6 +103,7 @@ import { NuevaClaveComponent } from './pages/nueva-clave/nueva-clave.component';
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
   ],
   entryComponents:[MatDialogModule],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule { }
