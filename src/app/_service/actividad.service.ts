@@ -78,8 +78,8 @@ export class ActividadService {
     return this.http.get<TypeActivity[]>(`${this.url}/GetTypeActivity`);
   }
   putActividadRealizada(actividadActualizar: Actividad) {
-    return this.http.put<TypeActivity[]>(
-      `${this.url}/PutActividadEstudiante`,
+    return this.http.post<TypeActivity[]>(
+      `${this.url}/PostActividadEstudiante`,
       actividadActualizar
     );
   }
