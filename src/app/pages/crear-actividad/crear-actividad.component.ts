@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewEncapsulation , OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { Actividad } from 'src/app/_model/Actividad';
+import { Actividad, ActividadElementoList } from 'src/app/_model/Actividad';
 import { ActividadPECS_Categorias } from 'src/app/_model/ActividadPECS_Categorias';
 import { UsuarioAcudiente } from 'src/app/_model/UsuarioAcudiente';
 import { ActividadService } from 'src/app/_service/actividad.service';
@@ -11,11 +11,14 @@ import { AngularFireStorage } from '@angular/fire/storage';
 import { Observable } from 'rxjs';
 import { TypeActivity } from 'src/app/_model/TypeActivity';
 import { ActividadPECS_Imagenes } from 'src/app/_model/ActividadPECS_Imagenes';
+import { NgxSpinnerService } from 'ngx-spinner';
+
 
 @Component({
   selector: 'app-crear-actividad',
   templateUrl: './crear-actividad.component.html',
   styleUrls: ['./crear-actividad.component.css'],
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class CrearActividadComponent implements OnInit {
   uploadURL: Observable<string>;
@@ -42,7 +45,8 @@ export class CrearActividadComponent implements OnInit {
   private nuevaActividad = new Actividad();
   public nuevaCategoriaPECS = new ActividadPECS_Categorias();
   public nuevaImagenPECS = new ActividadPECS_Imagenes();
-  public actividad_tipo: TypeActivity[];
+  public actividad_tipoList: TypeActivity[];
+  public listaActividades: ActividadElementoList[];
 
   //imagen
   public base64textString: string;
@@ -50,17 +54,20 @@ export class CrearActividadComponent implements OnInit {
   constructor(
     private snackBar: MatSnackBar,
     private servicioActividad: ActividadService,
-    private serviceAngularFireBase: AngularFireStorage
+    private serviceAngularFireBase: AngularFireStorage,
+    private SpinnerService: NgxSpinnerService
+
   ) {}
 
   async ngOnInit(): Promise<void> {
-    await this.delay(1000);
+    this.SpinnerService.show();
     //OBTIENE DATOS DE SESION
     this.datosSesion();
     //lista los tipos de actividades disponibles
     this.servicioActividad.getTypeActivity().subscribe((data) => {
-      this.actividad_tipo = data;
+      this.actividad_tipoList = data;
     });
+    this.SpinnerService.hide();
   }
 
   //IMITACION
@@ -171,7 +178,7 @@ export class CrearActividadComponent implements OnInit {
     } catch (error) {
       console.log('fallo en servicio' + error);
     }
-    
+
     await this.delay(1500);
     nuevaCtaegoria.Categoria_id = cantidadCategoriasAsignadas;
     console.log(cantidadCategoriasAsignadas);
@@ -261,8 +268,10 @@ export class CrearActividadComponent implements OnInit {
   }
 
   opcionRegistro(id) {
+    //imitacion vebal
     if (id == 1) {
       this.opcionCreacion = 1;
+    //pecs
     } else if (id == 2) {
       this.opcionCreacion = 2;
     }

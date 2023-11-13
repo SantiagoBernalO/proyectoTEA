@@ -1,3 +1,63 @@
+.custom-column{
+  padding: 0;
+}
+.custom-column-center{
+  margin-left: auto;
+  margin-right: auto;
+}
+.titulo{
+  font-size: large;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.tituloPrincipal{
+  color: #3f51b5;
+  font-size: xx-large;
+  font-weight: 900;
+  margin: 0;
+}
+.subtitulo{
+  font-size: large;
+  padding-top: 35px;
+  margin: 0;
+}
+
+.actividades {
+  background-color: #b3bae1;
+  padding: 5%;
+}
+
+.actividad{
+  width: 95%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 1px solid white;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 140px;
+}
+
+.actividad p{
+  font-size: medium;
+  text-align: center;
+  font-weight: 400;
+  color: white;
+}
+
+.caracteristicasActividad {
+  border-radius: 10px;
+  padding: 30px;
+  background-color: #5d74f6;
+}
+
+.form-inline {
+  width: 100%;
+}
+
+
 .boton {
   height: 80%;
   font-size: medium;
@@ -7,17 +67,27 @@
   margin: 0.5% auto;
 }
 
-.container_titulo {
+.campo_texto {
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 2em;
-  margin-bottom: 2em;
-  padding: 2em;
-  width: 50%;
-  background-color: #3f51b5;
-  border-top-left-radius: 55px;
-  border-bottom-right-radius: 55px;
 }
+
+/* Cambia el color del borde del mat-form-field a blanco */
+:host ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: white;
+}
+
+/* Cambia el color del texto del mat-label a blanco */
+:host ::ng-deep .mat-form-field-appearance-outline .mat-form-field-label {
+  color: white;
+}
+
+
+
+
+
+
 
 .formu {
   width: 100%;
@@ -34,105 +104,12 @@
   border-radius: 5px;
 }
 
-.formularioI {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  width: 90%;
-  margin: 0.5% auto;
-  height: 100%;
-}
-
-.formularioGeneral {
-  float: left;
-  width: 50%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #768af8;
-}
-
-.formularioGeneral_opciones {
-  float: left;
-  width: 50%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #768af8;
-  display: flex;
-  align-items: center;
-}
-
-.formularioGeneral_opciones .opciones {
-  width: 80%;
-  height: 50%;
-  border-radius: 20px;
-  text-align: center;
-}
-
-.formularioGeneral_opciones .opciones .opcionCreacion {
-  width: 100%;
-  height: 50%;
-  color: #ffffff;
-  font-size: 1.2vw;
-  border-radius: 20px;
-  background-color: #3f51b5;
-  border: 1px solid #ffffff;
-  margin-top: 5px;
-  cursor: pointer;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.formularioGeneral_opciones .opciones .opcionCreacion:hover {
-    opacity: 0.6;
-}
-
-.form-inline {
-  width: 100%;
-}
-
-.imagen {
-  float: left;
-  line-height: 100%;
-  width: 50%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #506aff;
-}
-
-.campo_texto {
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  color: #ffffff;
-}
-
-.registro {
-  width: 53%;
-  height: 85%;
-  margin: auto;
-}
-
 .tamano {
   width: 100%;
   height: 100px;
 }
 
-.titulo {
-  position: relative;
-  font-size: 50px;
-  font-style: inherit;
-  text-align: center;
-  margin-top: 25px;
-  color: #ffffff;
-  font: italic bold Georgia, Serif;
-}
+
 
 .tables {
   display: grid;

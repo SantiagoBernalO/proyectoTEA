@@ -5,9 +5,18 @@ export class Actividad {
     Descripcion:String;
     Docente_creador:string;
     Contenido_actividad:String;
-    Tipo_actividad:number; 
+    Tipo_actividad:number;
     Tipo_actividad_texto:String;
     NuevoEstudiante:PacienteScoreJSon;
 	EstudiantesHicieronActividad:String;
     Estado_id:number;
+}
+
+export class ActividadElementoList{
+
+}
+export class ActividadElemento{
+  id: number;
+  nombre: string;
+  descripcion: string;
 }
