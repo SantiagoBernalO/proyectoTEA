@@ -1,6 +1,6 @@
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import CryptoJS from 'crypto-js';
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { UserLogin } from './_model/UserLogin';
 import { LoginService } from './_service/login.service';
@@ -11,6 +11,7 @@ import { User } from './_model/User';
 import { UsuarioAcudiente } from './_model/UsuarioAcudiente';
 import { UsuarioPaciente } from './_model/UsuarioPaciente';
 import { Router } from '@angular/router';
+import { MatDrawer } from '@angular/material/sidenav';
 
 //permite el acceso a las animaciones en el componente de inicio
 var jquery: NodeRequire = require('../assets/jquery.js');
@@ -27,6 +28,9 @@ interface Registro {
 })
 export class AppComponent {
   title = 'ProyectoTEAA';
+
+  @ViewChild(MatDrawer) drawer: MatDrawer;
+
   public flagSesion: boolean = false;
   selectedValue: string;
   public usuario: String;
@@ -110,6 +114,11 @@ export class AppComponent {
     this.usuario = null;
     this.loginService.cerrarSesion(this.user);
     this.ngOnInit();
+  }
+
+  enviarRegistroToggleDrawer(tipoDeRegistro){
+    this.drawer.toggle();
+    this.enviarRegistro(tipoDeRegistro);
   }
 
   enviarRegistro(tipoDeRegistro) {

@@ -59,7 +59,7 @@
       </div>
       <div [hidden]="!flagSesion">
         <div *ngIf="rol==1">
-          <button mat-menu-item (click)="drawer.toggle()" style="cursor: pointer" [routerLink]="['/registro/3']">
+          <button mat-menu-item (click)="enviarRegistroToggleDrawer(3)" style="cursor: pointer">
             <mat-icon>person_add</mat-icon>
             <span>Agregar Estudiante</span>
           </button>
@@ -92,7 +92,7 @@
       <div [hidden]="!flagSesion">
         <div *ngIf="rol==1">
           <div>
-            <a mat-menu-item style="cursor: pointer" href="/enlazarNino/1">
+            <a mat-menu-item style="cursor: pointer" href="#/enlazarNino/1">
               <mat-icon>supervisor_account</mat-icon>
               <span>Enlazar Estudiante</span>
             </a>
@@ -101,7 +101,7 @@
         </div>
         <div *ngIf="rol==2">
           <div>
-            <a mat-menu-item style="cursor: pointer" href="/enlazarNino/2">
+            <a mat-menu-item style="cursor: pointer" href="#/enlazarNino/2">
               <mat-icon>supervisor_account</mat-icon>
               <span>Enlazar Estudiante</span>
             </a>
@@ -157,6 +157,8 @@
     <ngx-spinner bdColor="rgba(160,112,255,0.5)" size="medium" color = "#fff" type="pacman">
       <p style="color: white">Cargando...</p>
       </ngx-spinner>
+    <app-follow-cursor></app-follow-cursor>
+
 
   </mat-drawer-container>
 </div>
