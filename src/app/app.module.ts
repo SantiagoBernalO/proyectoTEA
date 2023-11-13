@@ -47,6 +47,7 @@ import { MisActividadesComponent } from './pages/mis-actividades/mis-actividades
 import { FormularioCompraComponent } from './pages/formulario-compra/formulario-compra.component';
 import { RecuperarClaveComponent } from './pages/recuperar-clave/recuperar-clave.component';
 import { NuevaClaveComponent } from './pages/nueva-clave/nueva-clave.component';
+import { FollowCursorComponent } from './follow-cursor/follow-cursor.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +74,7 @@ import { NuevaClaveComponent } from './pages/nueva-clave/nueva-clave.component';
     FormularioCompraComponent,
     RecuperarClaveComponent,
     NuevaClaveComponent,
+    FollowCursorComponent,
   ],
   imports: [
     BrowserModule,
