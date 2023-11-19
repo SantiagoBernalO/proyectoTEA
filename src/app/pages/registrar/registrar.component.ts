@@ -144,68 +144,84 @@ export class RegistrarComponent implements OnInit {
       ],
     ],
   });
-  //accion del boton (any son los datos que recibe del form)
+
+
   registrar(any): void {
     switch (this.tipoDeRegistro_ID) {
       case 1:
         //docente
-        this.datosDocente = this.formR.value;
-        this.datosDocente.institucion_id = 1;
-        this.usuarioService.registrarDocente(this.datosDocente).subscribe(
-          (data) => {
-            this.openSnackBar('Registro exitoso');
-            this.route.navigate(['login']);
-          },
-          (err) => {
-            if (err.status == 409) {
-              this.openSnackBar('Ya existe este usuario');
-            } else if(err.status == 400) {
-              this.openSnackBar('Antes de registrarte como docente compra licencia');
+        if (this.formR.valid) {
+          this.datosDocente = this.formR.value;
+          this.datosDocente.institucion_id = 1;
+          this.usuarioService.registrarDocente(this.datosDocente).subscribe(
+            (data) => {
+              this.openSnackBar('Registro exitoso');
+              this.route.navigate(['login']);
+            },
+            (err) => {
+              if (err.status == 409) {
+                this.openSnackBar('Ya existe este usuario');
+              } else if(err.status == 400) {
+                this.openSnackBar('Antes de registrarte como docente compra licencia');
+              }
             }
-          }
-        );
+          );
+        }else{
+          // Marcar campos como tocados para mostrar mensajes de error
+          this.formRP.markAllAsTouched();
+        }
         break;
       case 2:
         //acudiente
-        this.datosAcudiente = this.formR.value;
-        this.usuarioService.registrarAcudiente(this.datosAcudiente).subscribe(
-          (data) => {
-            this.openSnackBar('Registro exitoso');
-            this.route.navigate(['login']);
-          },
-          (err) => {
-            if (err.status == 409) {
-              this.openSnackBar('Ya existe este usuario');
-            } else {
-              this.openSnackBar(err);
+        if (this.formR.valid) {
+          this.datosAcudiente = this.formR.value;
+          this.usuarioService.registrarAcudiente(this.datosAcudiente).subscribe(
+            (data) => {
+              this.openSnackBar('Registro exitoso');
+              this.route.navigate(['login']);
+            },
+            (err) => {
+              if (err.status == 409) {
+                this.openSnackBar('Ya existe este usuario');
+              } else {
+                this.openSnackBar(err);
+              }
             }
-          }
-        );
+          );
+        }else{
+          // Marcar campos como tocados para mostrar mensajes de error
+          this.formRP.markAllAsTouched();
+        }
         break;
       case 3:
         //estudiante
-        const helper = new JwtHelperService();
-        const decodedToken = helper.decodeToken(
-          sessionStorage.getItem(environment.TOKEN)
-        );
-        const documetoDeLaRegistradora = decodedToken.Usuario;
-        const rol = decodedToken.Rol;
-        this.datosEstudiante = this.formRP.value;
-        this.datosEstudiante.institucion_id = 1;
-        this.datosEstudiante.documento_docente = documetoDeLaRegistradora;
-        this.usuarioService.registrarPaciente(this.datosEstudiante).subscribe(
-          (data) => {
-            this.openSnackBar('Registro exitoso');
-            this.route.navigate(['enlazarNino/' + rol]);
-          },
-          (err) => {
-            if (err.status == 409) {
-              this.openSnackBar('Este usuario ya existe');
-            } else {
-              this.openSnackBar(err);
+        if (this.formRP.valid) {
+          const helper = new JwtHelperService();
+          const decodedToken = helper.decodeToken(
+            sessionStorage.getItem(environment.TOKEN)
+          );
+          const documetoDeLaRegistradora = decodedToken.Usuario;
+          const rol = decodedToken.Rol;
+          this.datosEstudiante = this.formRP.value;
+          this.datosEstudiante.institucion_id = 1;
+          this.datosEstudiante.documento_docente = documetoDeLaRegistradora;
+          this.usuarioService.registrarPaciente(this.datosEstudiante).subscribe(
+            (data) => {
+              this.openSnackBar('Registro exitoso');
+              this.route.navigate(['enlazarNino/' + rol]);
+            },
+            (err) => {
+              if (err.status == 409) {
+                this.openSnackBar('Este usuario ya existe');
+              } else {
+                this.openSnackBar(err);
+              }
             }
-          }
-        );
+          );
+        }else{
+          // Marcar campos como tocados para mostrar mensajes de error
+          this.formRP.markAllAsTouched();
+        }
         break;
     }
   }
