@@ -13,7 +13,7 @@ export class FollowCursorComponent {
 
   @HostListener('document:mousemove', ['$event'])
   onMouseMove(event: MouseEvent) {
-    this.left = (event.pageX)-20;
-    this.top = event.pageY-50;
+    this.left = (event.pageX)-22;
+    this.top = event.pageY;
   }
 }
