@@ -1,3 +1,163 @@
+.custom-column{
+  padding: 0;
+}
+.containerPECS {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.actividadesPECS{
+  width: 95%;
+  height: 90%;
+  border-radius: 20px;
+  background-color: #3f51b5;
+}
+.actividad{
+  width: 100%;
+  height: 100%;
+}
+.actividadTitulo{
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.actividadTitulo h1{
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 0;
+}
+.imagenes{
+  margin: auto;
+  width: 95%;
+  height: 85%;
+}
+
+.imagenesPrincipal{
+  width: 100%;
+  height: 100%;
+}
+
+.imagenesSecundario{
+  width: 100%;
+  height: 100%;
+}
+
+.imagen {
+  background-color: rgba(64, 64, 64, 0.452);
+  width: 95%;
+  height: 75%;
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+  overflow: hidden; /* Para evitar desbordamiento de imágenes grandes */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mensajeSeleccion{
+  background-color: rgba(11, 11, 11, 0.452);
+  width: 95%;
+  height: 75%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mensajeSeleccion p{
+  text-align: center;
+  color: #ffff;
+  font-size: 1.5vw;
+}
+
+.imagen img{
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center center; /* Centra la imagen vertical y horizontalmente */
+}
+
+.imagenTexto{
+  width: 95%;
+  height: 10%;
+  background-color: white;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagenTexto p{
+  font-size: x-large;
+  margin:0;
+}
+
+.imagenAudio{
+  width: 95%;
+  height: 15%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagenAudio button{
+  width: 50%;
+  height: 80%;
+  padding: 0;
+}
+
+
+.actividadList{
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background-color: #8393ed;
+}
+
+.actividadList .opciones{
+  width: 80%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.actividadList .opciones p{
+  font-size: x-large;
+  color: white;
+  font-weight: 700;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .container {
   width: 100%;
   height: 100%;
@@ -113,7 +273,7 @@
 .imagenes-central .izquierda .img #brightness-on,
 .imagenes-central .centro .img #brightness-on,
 .imagenes-central .derecha .img #brightness-on {
-  filter: brightness(0.4);
+  filter: brightness();
 }
 
 .imagenes-central img {
@@ -346,7 +506,7 @@
 }
 
 /* para los botones de sintesis te voz */
- 
+
 
 .imagenes-central .izquierda .group_buttons,
 .imagenes-central .centro .group_buttons,
@@ -364,7 +524,7 @@
   font-size:40px !important;
   color: white;
   background-color: #5878ca;
-  border-radius: 100px 100px 100px 100px; 
+  border-radius: 100px 100px 100px 100px;
 }
 .imagenes-central .izquierda .buttons,
 .imagenes-central .centro .buttons,

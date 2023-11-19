@@ -34,26 +34,12 @@ export class PecsComponent implements OnInit{
   public fraseADecir: String;
   principal = true;
   actividadActual = 0;
+  colorCategora: string;
   imagenTomada;
   texto_imagenTomada;
 
-  actividadTxt: string[] = [
-    'INICIAL',
-    'cargando...',
-    'cargando...',
-    'cargando...',
-    'cargando...',
-    'cargando...',
-  ];
 
-  backgroundOpc_Activity: string[] = [
-    '#E2E2E2',
-    '#E2E2E2',
-    '#E2E2E2',
-    '#E2E2E2',
-    '#E2E2E2',
-    '#E2E2E2',
-  ];
+  imagenesElements = [0, 1, 2];
 
   imagenesPECS: string[] = [
     '../../../assets/image/autismo.jpg',
@@ -121,16 +107,9 @@ export class PecsComponent implements OnInit{
       .getCategoriasPECS(documentoDocente, documentoPaciente)
       .subscribe((data) => {
         this.infoCategorias = data;
-        this.cargarCategoriasPECS(this.infoCategorias);
       });
   }
 
-  cargarCategoriasPECS(infoCategorias) {
-    for (var i = 0; i < 5; i++) {
-      this.actividadTxt[i + 1] = infoCategorias[i].categoria;
-      this.backgroundOpc_Activity[i + 1] = infoCategorias[i].color;
-    }
-  }
 
   cargarImagenesActividad(
     documentoDocente,
@@ -168,64 +147,21 @@ export class PecsComponent implements OnInit{
     }
   }
 
-  actividad(idActividad) {
-    switch (idActividad) {
-      case 1:
-        this.principal = true;
-        this.actividadActual = 0;
-        break;
-      case 2:
-        this.principal = false;
-        this.actividadActual = 1;
-        this.cargarImagenesActividad(
-          this.usuarioDatos.documento_docente,
-          this.usuarioDatos.documento,
-          this.actividadActual
-        );
-        this.activacionOpcionPECS = [true, true, true, true, true, true];
-        break;
-      case 3:
-        this.principal = false;
-        this.actividadActual = 2;
-        this.cargarImagenesActividad(
-          this.usuarioDatos.documento_docente,
-          this.usuarioDatos.documento,
-          this.actividadActual
-        );
-        this.activacionOpcionPECS = [true, true, true, true, true, true];
-        break;
-      case 4:
-        this.principal = false;
-        this.actividadActual = 3;
-        this.cargarImagenesActividad(
-          this.usuarioDatos.documento_docente,
-          this.usuarioDatos.documento,
-          this.actividadActual
-        );
-        this.activacionOpcionPECS = [true, true, true, true, true, true];
-        break;
-      case 5:
-        this.principal = false;
-        this.actividadActual = 4;
-        this.cargarImagenesActividad(
-          this.usuarioDatos.documento_docente,
-          this.usuarioDatos.documento,
-          this.actividadActual
-        );
-        this.activacionOpcionPECS = [true, true, true, true, true, true];
-        break;
-      case 6:
-        this.principal = false;
-        this.actividadActual = 5;
-        this.cargarImagenesActividad(
-          this.usuarioDatos.documento_docente,
-          this.usuarioDatos.documento,
-          this.actividadActual
-        );
-        this.activacionOpcionPECS = [true, true, true, true, true, true];
-        break;
-      default:
-        break;
+  getCategoriaInfo(CategoriaSeleccionada: any) {
+    if (CategoriaSeleccionada.categoria_id) {
+      this.principal = false;
+      this.actividadActual = CategoriaSeleccionada.categoria_id;
+      this.colorCategora = CategoriaSeleccionada.color;
+      this.cargarImagenesActividad(
+        this.usuarioDatos.documento_docente,
+        this.usuarioDatos.documento,
+        this.actividadActual
+      );
+      this.activacionOpcionPECS = [true, true, true, true, true, true];
+    } else if(CategoriaSeleccionada==0){
+      this.principal = true;
+      this.actividadActual = 0;
+      this.colorCategora = '#3f51b5';
     }
   }
 

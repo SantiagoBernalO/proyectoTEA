@@ -1,174 +1,129 @@
-<section class="container">
-    <div class="container-pecs">
-
-        <div class="panel-actividades">
-            <div class="actividades" [ngStyle]="{'background-color':backgroundOpc_Activity[actividadActual]}">
-                <div class="titulo">
-                    <div class="txt">
-                        <h1>Actividad</h1>
-                    </div>
+<div class="container-fluid" style="height: 100%;">
+  <div class="row" style="margin: 0; height: 100%;">
+    <div class="col-md-12 col-lg-12 custom-column">
+      <div class="containerPECS">
+        <div class="actividadesPECS" [ngStyle]="{'background-color':colorCategora}">
+          <div class="row" style="margin: 0; height: 100%;">
+            <div class="col-10 col-lg-11 custom-column" style="height: 100%;">
+              <div class="actividad">
+                <div class="actividadTitulo">
+                  <h1>Actividad</h1>
                 </div>
-                <div class="imagenes-principal" *ngIf="principal==true">
-                    <div class="imagenes-central">
-                        <div class="izquierda">
-                            <div class="img"><img id="brightness-on" [src]="imagenesSeleccionadasPECS[0]"
-                                    (click)='ColocarImagen(0)' alt="">
-                                <div class="texto">
-                                    <p>{{textosSeleccionadosPECS[0]}}</p>
-                                </div>
-                                <div class="group_buttons">
-                                    <div class="buttons">
-                                        <button mat-button id="basic" type="submit"(click)="reproducirPalabra(0)">
-                                            <mat-icon color="white">music_note</mat-icon>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="imagenes">
+                  <div class="imagenesPrincipal" *ngIf="principal==true">
+                    <div class="row" style="margin: 0; height: 100%;">
+                      <div class="col-12 col-lg-4 custom-column" style="height: 100%;" *ngFor="let index of imagenesElements">
+                        <div class="imagen">
+                          <img [src]="imagenesSeleccionadasPECS[index]" (click)='ColocarImagen(index)' alt="">
                         </div>
-                        <div class="centro">
-                            <div class="img"><img id="brightness-on" [src]="imagenesSeleccionadasPECS[1]"
-                                    (click)='ColocarImagen(1)' alt="">
-                                <div class="texto">
-                                    <p>{{textosSeleccionadosPECS[1]}}</p>
-                                </div>
-                                <div class="group_buttons">
-                                    <div class="buttons">
-                                        <button mat-button id="basic" type="submit"(click)="reproducirPalabra(1)">
-                                            <mat-icon color="white">music_note</mat-icon>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="imagenTexto">
+                          <p>{{textosSeleccionadosPECS[index]}}</p>
                         </div>
-                        <div class="derecha">
-                            <div class="img"><img id="brightness-on" [src]="imagenesSeleccionadasPECS[2]"
-                                    (click)='ColocarImagen(2)' alt="">
-                                <div class="texto">
-                                    <p>{{textosSeleccionadosPECS[2]}}</p>
-                                </div>
-                                <div class="group_buttons">
-                                    <div class="buttons">
-                                        <button mat-button id="basic" type="submit"(click)="reproducirPalabra(2)">
-                                            <mat-icon color="white">music_note</mat-icon>
-                                        </button>   
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="imagenAudio">
+                          <button type="button" class="btn btn-light" (click)="reproducirPalabra(index)">
+                            <span class="bi bi-music-note" style="font-size: 3rem;"></span>
+                          </button>
                         </div>
+                      </div>
                     </div>
+                  </div>
+                  <div class="imagenesSecundario" *ngIf="principal==false">
+                    <div class="row" style="margin: 0; height: 50%;">
+                      <div class="col-12 col-lg-4 custom-column" style="height: 100%;">
+                        <div class="imagen" (click)="SeleccionImagen(0)" *ngIf="activacionOpcionPECS[0]==true">
+                          <img [src]="imagenesPECS[0]" alt="">
+                        </div>
+                        <div class="mensajeSeleccion" (click)='SeleccionImagen(0)'
+                          *ngIf="activacionOpcionPECS[0]==false">
+                          <p>Imagen seleccionada</p>
+                        </div>
+                        <div class="imagenTexto">
+                          <p>{{imagenesPECS_texto[0]}}</p>
+                        </div>
+                      </div>
+                      <div class="col-12 col-lg-4 custom-column" style="height: 100%;">
+                        <div class="imagen" (click)="SeleccionImagen(1)" *ngIf="activacionOpcionPECS[1]==true">
+                          <img [src]="imagenesPECS[1]" alt="">
+                        </div>
+                        <div class="mensajeSeleccion" (click)='SeleccionImagen(1)'
+                          *ngIf="activacionOpcionPECS[1]==false">
+                          <p>Imagen seleccionada</p>
+                        </div>
+                        <div class="imagenTexto">
+                          <p>{{imagenesPECS_texto[1]}}</p>
+                        </div>
+                      </div>
+                      <div class="col-12 col-lg-4 custom-column" style="height: 100%;">
+                        <div class="imagen" (click)="SeleccionImagen(2)" *ngIf="activacionOpcionPECS[2]==true">
+                          <img [src]="imagenesPECS[2]" alt="">
+                        </div>
+                        <div class="mensajeSeleccion" (click)='SeleccionImagen(2)'
+                          *ngIf="activacionOpcionPECS[2]==false">
+                          <p>Imagen seleccionada</p>
+                        </div>
+                        <div class="imagenTexto">
+                          <p>{{imagenesPECS_texto[2]}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row" style="margin: 0; height: 50%;">
+                      <div class="col-12 col-lg-4 custom-column" style="height: 100%;">
+                        <div class="imagen" (click)="SeleccionImagen(3)" *ngIf="activacionOpcionPECS[3]==true">
+                          <img [src]="imagenesPECS[3]" alt="">
+                        </div>
+                        <div class="mensajeSeleccion" (click)='SeleccionImagen(3)'
+                          *ngIf="activacionOpcionPECS[3]==false">
+                          <p>Imagen seleccionada</p>
+                        </div>
+                        <div class="imagenTexto">
+                          <p>{{imagenesPECS_texto[3]}}</p>
+                        </div>
+                      </div>
+                      <div class="col-12 col-lg-4 custom-column" style="height: 100%;">
+                        <div class="imagen" (click)="SeleccionImagen(4)" *ngIf="activacionOpcionPECS[4]==true">
+                          <img [src]="imagenesPECS[4]" alt="">
+                        </div>
+                        <div class="mensajeSeleccion" (click)='SeleccionImagen(4)'
+                          *ngIf="activacionOpcionPECS[4]==false">
+                          <p>Imagen seleccionada</p>
+                        </div>
+                        <div class="imagenTexto">
+                          <p>{{imagenesPECS_texto[4]}}</p>
+                        </div>
+                      </div>
+                      <div class="col-12 col-lg-4 custom-column" style="height: 100%;">
+                        <div class="imagen" (click)="SeleccionImagen(5)" *ngIf="activacionOpcionPECS[5]==true">
+                          <img [src]="imagenesPECS[5]" alt="">
+                        </div>
+                        <div class="mensajeSeleccion" (click)='SeleccionImagen(5)'
+                          *ngIf="activacionOpcionPECS[5]==false">
+                          <p>Imagen seleccionada</p>
+                        </div>
+                        <div class="imagenTexto">
+                          <p>{{imagenesPECS_texto[5]}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                
-                <div class="imagenes-secundaria" *ngIf="principal==false">
-                    <div class="imagenes-superior">
-                        <div class="izquierda">
-                            <div class="img" id="brightness-on" (click)='SeleccionImagen(0)'
-                                *ngIf="activacionOpcionPECS[0]==true"><img [src]="imagenesPECS[0]" alt=""></div>
-                            <div class="mensajeSeleccion" (click)='SeleccionImagen(0)'
-                                *ngIf="activacionOpcionPECS[0]==false">
-                                <div class="mensaje">
-                                    imagen seleccionada
-                                </div>
-                            </div>
-                        </div>
-                        <div class="centro">
-                            <div class="img" id="brightness-on" (click)='SeleccionImagen(1)'
-                                *ngIf="activacionOpcionPECS[1]==true"><img [src]="imagenesPECS[1]" alt=""></div>
-                            <div class="mensajeSeleccion" (click)='SeleccionImagen(1)'
-                                *ngIf="activacionOpcionPECS[1]==false">
-                                <div class="mensaje">
-                                    imagen seleccionada
-                                </div>
-                            </div>
-                        </div>
-                        <div class="derecha">
-                            <div class="img" id="brightness-on" (click)='SeleccionImagen(2)'
-                                *ngIf="activacionOpcionPECS[2]==true"><img [src]="imagenesPECS[2]" alt=""></div>
-                            <div class="mensajeSeleccion" (click)='SeleccionImagen(1)'
-                                *ngIf="activacionOpcionPECS[2]==false">
-                                <div class="mensaje">
-                                    imagen seleccionada
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="imagenes-inferior">
-                        <div class="izquierda">
-                            <div class="img" id="brightness-on" (click)='SeleccionImagen(3)'
-                                *ngIf="activacionOpcionPECS[3]==true"><img [src]="imagenesPECS[3]" alt=""></div>
-                            <div class="mensajeSeleccion" (click)='SeleccionImagen(3)'
-                                *ngIf="activacionOpcionPECS[3]==false">
-                                <div class="mensaje">
-                                    imagen seleccionada
-                                </div>
-                            </div>
-                        </div>
-                        <div class="centro">
-                            <div class="img" id="brightness-on" (click)='SeleccionImagen(4)'
-                                *ngIf="activacionOpcionPECS[4]==true"><img [src]="imagenesPECS[4]" alt=""></div>
-                            <div class="mensajeSeleccion" (click)='SeleccionImagen(4)'
-                                *ngIf="activacionOpcionPECS[4]==false">
-                                <div class="mensaje">
-                                    imagen seleccionada
-                                </div>
-                            </div>
-                        </div>
-                        <div class="derecha">
-                            <div class="img" id="brightness-on" (click)='SeleccionImagen(5)'
-                                *ngIf="activacionOpcionPECS[5]==true"><img [src]="imagenesPECS[5]" alt=""></div>
-                            <div class="mensajeSeleccion" (click)='SeleccionImagen(5)'
-                                *ngIf="activacionOpcionPECS[5]==false">
-                                <div class="mensaje">
-                                    imagen seleccionada
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+              </div>
             </div>
-            <div class="list-actividades">
-                <div class="opciones">
-
-                    <div class="opcion" [ngStyle]="{'background-color':backgroundOpc_Activity[0]}"
-                        (click)='actividad(1)'>
-                        <div class="opcion-txt">
-                            <p>{{actividadTxt[0]}}</p>
-                        </div>
-                    </div>
-                    <div class="opcion" [ngStyle]="{'background-color':backgroundOpc_Activity[1]}"
-                        (click)='actividad(2)'>
-                        <div class="opcion-txt">
-                            <p>{{actividadTxt[1]}}</p>
-                        </div>
-                    </div>
-                    <div class="opcion" [ngStyle]="{'background-color':backgroundOpc_Activity[2]}"
-                        (click)='actividad(3)'>
-                        <div class="opcion-txt">
-                            <p>{{actividadTxt[2]}}</p>
-                        </div>
-                    </div>
-                    <div class="opcion" [ngStyle]="{'background-color':backgroundOpc_Activity[3]}"
-                        (click)='actividad(4)'>
-                        <div class="opcion-txt">
-                            <p>{{actividadTxt[3]}}</p>
-                        </div>
-                    </div>
-                    <div class="opcion" [ngStyle]="{'background-color':backgroundOpc_Activity[4]}"
-                        (click)='actividad(5)'>
-                        <div class="opcion-txt">
-                            <p>{{actividadTxt[4]}}</p>
-                        </div>
-                    </div>
-                    <div class="opcion" [ngStyle]="{'background-color':backgroundOpc_Activity[5]}"
-                        (click)='actividad(6)'>
-                        <div class="opcion-txt">
-                            <p>{{actividadTxt[5]}}</p>
-                        </div>
-                    </div>
+            <div class="col-2 col-lg-1 custom-column">
+              <div class="actividadList">
+                <div class="opciones" style="background-color: rgb(195, 195, 195);" (click)='getCategoriaInfo(0)'>
+                  <p>inicial</p>
                 </div>
+                <div *ngFor="let categoriaOpcion of infoCategorias">
+                  <div class="opciones" [ngStyle]="{'background-color':categoriaOpcion.color}"
+                    (click)='getCategoriaInfo(categoriaOpcion)'>
+                    <p>{{categoriaOpcion.categoria}}</p>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-
+      </div>
     </div>
-
-</section>
+  </div>
+</div>
