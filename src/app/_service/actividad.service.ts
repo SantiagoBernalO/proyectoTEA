@@ -65,8 +65,9 @@ export class ActividadService {
   }
 
   putActividad(id_actividad: string) {
-    return this.http.delete<any>(
-      `${this.url}/PutActividadDesActivar/` + id_actividad
+    return this.http.post<any>(
+      `${this.url}/PostActividadDesActivar`,
+      id_actividad
     );
   }
 
@@ -158,8 +159,8 @@ export class ActividadService {
   }
 
   putCategoriaEstado(id_actividad: string) {
-    return this.http.delete<any>(
-      `${this.url}/PutCategoriaDesActivar/` + id_actividad
+    return this.http.post<any>(
+      `${this.url}/PostCategoriaDesActivar`, id_actividad
     );
   }
 
