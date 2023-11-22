@@ -12,7 +12,7 @@
                 <div class="imagenes">
                   <div class="imagenesPrincipal" *ngIf="principal==true">
                     <div class="row" style="margin: 0; height: 100%;">
-                      <div class="col-12 col-lg-4 custom-column" style="height: 100%;" *ngFor="let index of imagenesElements">
+                      <div class="col-4 col-lg-4 custom-column" style="height: 100%;" *ngFor="let index of imagenesElements">
                         <div class="imagen">
                           <img [src]="imagenesSeleccionadasPECS[index]" (click)='ColocarImagen(index)' alt="">
                         </div>
@@ -21,7 +21,7 @@
                         </div>
                         <div class="imagenAudio">
                           <button type="button" class="btn btn-light" (click)="reproducirPalabra(index)">
-                            <span class="bi bi-music-note" style="font-size: 3rem;"></span>
+                            <span class="bi bi-music-note" style="font-size: 5vh;"></span>
                           </button>
                         </div>
                       </div>
@@ -29,7 +29,7 @@
                   </div>
                   <div class="imagenesSecundario" *ngIf="principal==false">
                     <div class="row" style="margin: 0; height: 50%;">
-                      <div class="col-12 col-lg-4 custom-column" style="height: 100%;">
+                      <div class="col-4 col-lg-4 custom-column" style="height: 100%;">
                         <div class="imagen" (click)="SeleccionImagen(0)" *ngIf="activacionOpcionPECS[0]==true">
                           <img [src]="imagenesPECS[0]" alt="">
                         </div>
@@ -41,7 +41,7 @@
                           <p>{{imagenesPECS_texto[0]}}</p>
                         </div>
                       </div>
-                      <div class="col-12 col-lg-4 custom-column" style="height: 100%;">
+                      <div class="col-4 col-lg-4 custom-column" style="height: 100%;">
                         <div class="imagen" (click)="SeleccionImagen(1)" *ngIf="activacionOpcionPECS[1]==true">
                           <img [src]="imagenesPECS[1]" alt="">
                         </div>
@@ -53,7 +53,7 @@
                           <p>{{imagenesPECS_texto[1]}}</p>
                         </div>
                       </div>
-                      <div class="col-12 col-lg-4 custom-column" style="height: 100%;">
+                      <div class="col-4 col-lg-4 custom-column" style="height: 100%;">
                         <div class="imagen" (click)="SeleccionImagen(2)" *ngIf="activacionOpcionPECS[2]==true">
                           <img [src]="imagenesPECS[2]" alt="">
                         </div>
@@ -67,7 +67,7 @@
                       </div>
                     </div>
                     <div class="row" style="margin: 0; height: 50%;">
-                      <div class="col-12 col-lg-4 custom-column" style="height: 100%;">
+                      <div class="col-4 col-lg-4 custom-column" style="height: 100%;">
                         <div class="imagen" (click)="SeleccionImagen(3)" *ngIf="activacionOpcionPECS[3]==true">
                           <img [src]="imagenesPECS[3]" alt="">
                         </div>
@@ -79,7 +79,7 @@
                           <p>{{imagenesPECS_texto[3]}}</p>
                         </div>
                       </div>
-                      <div class="col-12 col-lg-4 custom-column" style="height: 100%;">
+                      <div class="col-4 col-lg-4 custom-column" style="height: 100%;">
                         <div class="imagen" (click)="SeleccionImagen(4)" *ngIf="activacionOpcionPECS[4]==true">
                           <img [src]="imagenesPECS[4]" alt="">
                         </div>
@@ -91,7 +91,7 @@
                           <p>{{imagenesPECS_texto[4]}}</p>
                         </div>
                       </div>
-                      <div class="col-12 col-lg-4 custom-column" style="height: 100%;">
+                      <div class="col-4 col-lg-4 custom-column" style="height: 100%;">
                         <div class="imagen" (click)="SeleccionImagen(5)" *ngIf="activacionOpcionPECS[5]==true">
                           <img [src]="imagenesPECS[5]" alt="">
                         </div>
@@ -108,7 +108,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-2 col-lg-1 custom-column">
+            <div class="col-2 col-lg-1 custom-column customColumnList">
               <div class="actividadList">
                 <div class="opciones" style="background-color: rgb(195, 195, 195);" (click)='getCategoriaInfo(0)'>
                   <p>inicial</p>

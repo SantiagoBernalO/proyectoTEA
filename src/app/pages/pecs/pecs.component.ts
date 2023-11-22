@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { reduce } from 'rxjs/operators';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { environment } from 'src/environments/environment';
@@ -18,13 +18,20 @@ import { SpeechService } from 'src/app/_service/speech.service.service';
 import { MatDialog } from '@angular/material/dialog';
 import { PopupComponent } from '../popup/popup.component';
 import { Router } from '@angular/router';
+import { Platform } from '@angular/cdk/platform';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { Subscription, fromEvent } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-pecs',
   templateUrl: './pecs.component.html',
   styleUrls: ['./pecs.component.css'],
 })
-export class PecsComponent implements OnInit{
+export class PecsComponent implements OnInit, OnDestroy {
+
+  private resizeSubscription: Subscription | undefined;
+
   public dialogRef;
   textomensaje: string;
   public usuarioSesion = new Usuario();
@@ -77,12 +84,51 @@ export class PecsComponent implements OnInit{
     private actividadService: ActividadService,
     private _sanitizer: DomSanitizer,
     public dialog: MatDialog,
-    private router: Router) {
+    private router: Router,
+    private platform: Platform,
+    private SpinnerService: NgxSpinnerService) {
   }
 
   async ngOnInit(): Promise<void> {
     this.datosSesion();
     this.cargarInfoDocenteEnlazado(this.usuarioSesion.numero_documento);
+
+    if (this.platform.ANDROID || this.platform.IOS) {
+      // Verifica la orientación inicial
+      this.checkOrientation();
+
+      // Suscribe a eventos de cambio de tamaño de ventana
+      this.resizeSubscription = fromEvent(window, 'resize')
+        .pipe(debounceTime(200))  //evita la ejecución frecuente
+        .subscribe(() => {
+          this.checkOrientation();
+        });
+    }
+  }
+
+  ngOnDestroy(): void {
+    // Desuscribe del evento al destruir el componente
+    if (this.resizeSubscription) {
+      this.resizeSubscription.unsubscribe();
+    }
+  }
+
+  /*@HostListener('window:orientationchange', ['$event'])
+  onOrientationChange(event: Event): void {
+    this.checkOrientation();
+  }/ */
+
+  private checkOrientation(): void {
+    // Obtén la orientación actual
+    const orientation = window.innerWidth > window.innerHeight ? 'pc':'movil';
+
+    // Muestra el mensaje o realiza acciones específicas si es necesario
+    if (orientation === 'movil') {
+      this.SpinnerService.show();
+      //alert('Por favor, gire su dispositivo a la posición horizontal para una mejor experiencia');
+    }else{
+      this.SpinnerService.hide();
+    }
   }
 
   datosSesion() {

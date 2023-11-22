@@ -11,7 +11,7 @@
 }
 .actividadesPECS{
   width: 95%;
-  height: 90%;
+  height: 80vh;
   border-radius: 20px;
   background-color: #3f51b5;
 }
@@ -96,7 +96,7 @@
 }
 
 .imagenTexto p{
-  font-size: x-large;
+  font-size: 5vh;
   margin:0;
 }
 
@@ -134,12 +134,14 @@
 }
 
 .actividadList .opciones p{
-  font-size: x-large;
+  font-size: 1.5vw;
   color: white;
   font-weight: 700;
 }
 
-
+.customColumnList{
+  height: 100%;
+}
 
 
 
