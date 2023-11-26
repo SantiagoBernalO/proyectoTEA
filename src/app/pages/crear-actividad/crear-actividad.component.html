@@ -1,18 +1,23 @@
-<div class="container-fluid" style="height: 100vh;">
-  <div class="row" style="margin: 0;">
-    <div class="col-md-8 col-lg-8 custom-column-center">
+<div class="container-fluid" style="height: 100vh; background-color:rgb(32, 42, 97);">
+  <div class="row" style="margin: 0; height: 30%;">
+    <div class="col-8 custom-column-center">
       <div class="titulo">
-        <p class="tituloPrincipal"> Creación de actividad</p>
+        <p class="tituloPrincipal">Creación de actividades</p>
         <p class="subtitulo">Aquí encontrarás una lista de actividas disponibleas a realizar, selecciona y crea la tuya!</p>
       </div>
     </div>
+    <div class="col-2 custom-column-center">
+      <div class="imagenTitulo">
+        <img src="../../../assets/image/icon/crearActividad.png" alt="">
+      </div>
+    </div>
   </div>
-  <div class="row" style="margin: 0;">
+  <div class="row" style="margin: 0; height: 70%;">
     <div *ngIf="opcionCreacion==null" class="col-md-12 col-lg-12">
       <div class="actividades">
         <div class="row" style="margin: 0;">
           <div class="col-md-3 col-lg-3 custom-column" *ngFor="let actividad of actividad_tipoList"
-                style="display: flex;align-items: center;justify-content: center;">
+            style="display: flex;align-items: center;justify-content: center;">
             <div class="actividad" (click)="opcionRegistro(actividad.Id_tp_actividad)">
               <p>Agregar <br>{{actividad.ActividadNombre}}</p>
             </div>
