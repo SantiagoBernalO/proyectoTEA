@@ -49,6 +49,8 @@ import { RecuperarClaveComponent } from './pages/recuperar-clave/recuperar-clave
 import { NuevaClaveComponent } from './pages/nueva-clave/nueva-clave.component';
 import { FollowCursorComponent } from './follow-cursor/follow-cursor.component';
 import { GestionarActividadComponent } from './components/gestionar-actividad/gestionar-actividad.component';
+import { PizarronComponent } from './components/pizarron/pizarron.component';
+import { PanelActividadMotoraPizarronComponent } from './pages/panelActividadMotoraPizarron/panel-actividad-motora-pizarron/panel-actividad-motora-pizarron.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +79,8 @@ import { GestionarActividadComponent } from './components/gestionar-actividad/ge
     NuevaClaveComponent,
     FollowCursorComponent,
     GestionarActividadComponent,
+    PizarronComponent,
+    PanelActividadMotoraPizarronComponent,
   ],
   imports: [
     BrowserModule,

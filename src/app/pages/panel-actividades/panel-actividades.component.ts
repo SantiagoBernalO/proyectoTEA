@@ -21,8 +21,10 @@ export class PanelActividadesComponent implements OnInit {
         pagina = 'panelActividadesDeImitacion';
         break;
       case 2:
-
         pagina = 'pecs';
+        break;
+      case 3:
+        pagina = 'pizarron';
         break;
     }
     this.router.navigate([pagina]);
