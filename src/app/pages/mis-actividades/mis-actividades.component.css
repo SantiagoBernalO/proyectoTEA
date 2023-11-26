@@ -1,65 +1,59 @@
-.contenedor {
+.custom-column-center{
+  margin-left: auto;
+  margin-right: auto;
+}
+.titulo{
+  padding: 2em;
+  font-size: large;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border: 2px solid white;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+.tituloPrincipal{
+  color: #ffffff;
+  font-size: xx-large;
+  font-weight: 900;
+  margin: 0;
+}
+.imagenTitulo{
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
+}
+.imagenTitulo img{
+  width: 100%;
+}
+.subtitulo{
+  color: #ffffff;
+  font-size: large;
+  padding-top: 35px;
+  margin: 0;
 }
 
-.opciones {
-  width: 70vw;
-  height: 40%;
-  background-color: #506aff;
-  margin: auto;
-  border-radius: 100px;
+.actividades {
+  height: 95%;
+  background-color: #d2cadc;
+  padding: 5%;
+  overflow-y: scroll;
+}
+.actividad{
+  width: 95%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 1px solid rgb(62, 36, 78);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 140px;
+}
+.actividad p{
+  font-size: medium;
   text-align: center;
-}
-
-.opciones .opcion-ImitacionVerbal {
-  width: 49.999%;
-  height: 100%;
-  display: flex;
-  float: left;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.7vw;
-  color: antiquewhite;
-  font-weight: 600;
-  border-right: 2px solid #ffff;
-  opacity: 0.7;
-}
-
-.opciones .opcion-PECS {
-  width: 49.999%;
-  height: 100%;
-  display: flex;
-  float: left;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.7vw;
-  color: antiquewhite;
-  font-weight: 600;
-  border-left: 2px solid #ffff;
-  opacity: 0.7;
-}
-
-.opciones .opcion-ImitacionVerbal:hover {
-  opacity: inherit;
-  text-decoration: underline;
-  background-color: #3e4fb2;
-  animation-duration: 3s;
-  cursor: pointer;
-  transition-duration: 1s;
-  border-bottom-left-radius: 100px;
-  border-top-left-radius: 100px;
-}
-
-.opciones .opcion-PECS:hover {
-  opacity: inherit;
-  text-decoration: underline;
-  background-color: #3e4fb2;
-  animation-duration: 3s;
-  cursor: pointer;
-  transition-duration: 1s;
-  border-bottom-right-radius: 100px;
-  border-top-right-radius: 100px;
+  font-weight: 400;
+  color: rgb(62, 36, 78);
 }

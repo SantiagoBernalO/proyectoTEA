@@ -1,6 +1,40 @@
-<div class="contenedor">
-    <div class="opciones">
-        <div class="opcion-ImitacionVerbal" (click)='opcion(1)'>Gestionar actividades Imitacion verbal</div>
-        <div class="opcion-PECS" (click)='opcion(2)'>Gestionar actividades PECS</div>
+<div class="container-fluid" style="height: 100vh; background-color:rgb(62, 36, 78);">
+  <div class="row" style="margin: 0; height: 30%;">
+    <div class="col-8 custom-column-center">
+      <div class="titulo">
+        <p class="tituloPrincipal">Gestión de actividades</p>
+        <p class="subtitulo">Aquí podrás activar y desactivar las actividades que has creado</p>
+      </div>
     </div>
+    <div class="col-2 custom-column-center">
+      <div class="imagenTitulo">
+        <img src="../../../assets/image/icon/gestionActividad.png" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin: 0; height: 70%;">
+    <div class="col-md-12 col-lg-12" style="height: 100%;">
+      <div class="actividades">
+        <div class="row" style="margin: 0;" *ngIf="showAdministrarActividad==false">
+          <div class="col-md-3 col-lg-3 custom-column" *ngFor="let actividad of actividad_tipoList"
+            style="display: flex;align-items: center;justify-content: center;">
+            <div class="actividad" (click)='opcionGestion(actividad.Id_tp_actividad)'>
+              <p>Gestionar actividad: <br>{{actividad.ActividadNombre}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="row" style="margin: 0;" *ngIf="showAdministrarActividad">
+          <div class="col-12">
+            <button type="button" class="btn btn-light" (click)="regresar()">
+              <span class="bi bi-arrow-left" style="font-size: 5vh;"></span>
+              Regresar
+            </button>
+          </div>
+          <div class="col-12">
+            <app-gestionar-actividad [actividadType]="actividadType"></app-gestionar-actividad>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

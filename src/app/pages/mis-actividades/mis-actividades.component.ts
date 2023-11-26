@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { TypeActivity } from 'src/app/_model/TypeActivity';
+import { ActividadService } from 'src/app/_service/actividad.service';
 
 @Component({
   selector: 'app-mis-actividades',
@@ -7,15 +10,31 @@ import { Router } from '@angular/router';
   styleUrls: ['./mis-actividades.component.css'],
 })
 export class MisActividadesComponent implements OnInit {
-  constructor(private router: Router) {}
+  public actividad_tipoList: TypeActivity[];
+  public showAdministrarActividad: Boolean = false;
+  public actividadType: number;
 
-  ngOnInit(): void {}
+  constructor(private router: Router,
+    private servicioActividad: ActividadService,
+    private SpinnerService: NgxSpinnerService
+  ) { }
 
-  opcion(id) {
-    if (id == 1) {
-      this.router.navigate(['/administrarActividad/1']);
-    } else if (id == 2) {
-      this.router.navigate(['/administrarActividad/2']);
-    }
+  ngOnInit(): void {
+    this.SpinnerService.show();
+    //lista los tipos de actividades disponibles
+    this.servicioActividad.getTypeActivity().subscribe((data) => {
+      this.actividad_tipoList = data;
+    });
+    this.SpinnerService.hide();
+  }
+
+  opcionGestion(id) {
+    this.actividadType=id;
+    this.showAdministrarActividad=!this.showAdministrarActividad;
+    //this.router.navigate(['/administrarActividad/'+id]);
+  }
+
+  regresar(){
+    this.showAdministrarActividad=false;
   }
 }
