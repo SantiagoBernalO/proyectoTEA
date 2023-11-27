@@ -34,24 +34,27 @@ export class PizarronComponent implements OnInit {
     this.canvas.nativeElement.height = canvasContainer.clientHeight-100;
   }
 
-  startDrawing(event: MouseEvent): void {
+  startDrawing(event: MouseEvent | TouchEvent): void {
     this.isDrawing = true;
     const rect = this.canvas.nativeElement.getBoundingClientRect();
+    const x = (event instanceof MouseEvent) ? event.clientX : event.touches[0].clientX;
+    const y = (event instanceof MouseEvent) ? event.clientY : event.touches[0].clientY;
     this.ctx.beginPath();
-    this.ctx.moveTo(event.clientX - rect.left, event.clientY - rect.top);
+    this.ctx.moveTo(x - rect.left, y - rect.top);
   }
 
-  draw(event: MouseEvent): void {
+  draw(event: MouseEvent | TouchEvent): void {
     if (!this.isDrawing) return;
 
     const rect = this.canvas.nativeElement.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
+    const x = (event instanceof MouseEvent) ? event.clientX : event.touches[0].clientX;
+    const y = (event instanceof MouseEvent) ? event.clientY : event.touches[0].clientY;
+
 
     if (this.isEraserMode) {
       this.ctx.clearRect(x - 5, y - 5, 20, 20); // Tamaño del borrador
     } else {
-      this.ctx.lineTo(x, y);
+      this.ctx.lineTo(x - rect.left, y - rect.top);
       this.ctx.strokeStyle = this.selectedColor;
       this.ctx.stroke();
     }

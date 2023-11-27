@@ -1,6 +1,12 @@
 <div style="width: 100%; height: 100%;">
-  <canvas #canvasElement (mousedown)="startDrawing($event)" (mousemove)="draw($event)"
-    (mouseup)="endDrawing()"></canvas>
+  <canvas #canvasElement
+    (mousedown)="startDrawing($event)"
+    (mousemove)="draw($event)"
+    (mouseup)="endDrawing()"
+    (touchstart)="startDrawing($event)"
+    (touchmove)="draw($event)"
+    (touchend)="endDrawing()"
+    ></canvas>
     <button (click)="clearCanvas()">Borrar</button>
     <button (click)="toggleEraserMode()">Activar Borrador</button>
     <input type="color" [(ngModel)]="selectedColor" />
