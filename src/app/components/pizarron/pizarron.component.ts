@@ -31,7 +31,7 @@ export class PizarronComponent implements OnInit {
   adjustCanvasSize(): void {
     const canvasContainer = this.canvas.nativeElement.parentElement;
     this.canvas.nativeElement.width = canvasContainer.clientWidth;
-    this.canvas.nativeElement.height = canvasContainer.clientHeight-100;
+    this.canvas.nativeElement.height = canvasContainer.clientHeight-50;
   }
 
   startDrawing(event: MouseEvent | TouchEvent): void {
