@@ -15,7 +15,7 @@
     </div>
   </div>
   <div class="row" style="margin: 0; height: 70%;">
-    <div class="col-4">
+    <div class="col-4" style="height: 100%;">
       <div class="actividades">
         <mat-card class="example-card" (click)="actividadSeleccionada(0)">
           <mat-card-title-group>
@@ -35,7 +35,7 @@
         </mat-list-item>
       </div>
     </div>
-    <div class="col-8">
+    <div class="col-8" style="height: 100%;">
       <table mat-table [dataSource]="pacientesTabla" matSort class="mat-elevation-z8" style="width: 100%; text-align: center;">
         <caption>PACIENTES QUE REALIZARON LA ACTIVIDAD</caption>
         <ng-container matColumnDef="Nombre Paciente">

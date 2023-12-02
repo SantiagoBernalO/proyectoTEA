@@ -62,10 +62,13 @@
   background-color: #3287b1; /* color de fondo del scrollbar */
 }
 .actividades::-webkit-scrollbar-thumb {
-  background-color: #071017; /* color del thumb del scrollbar */
+  background-color:#07135a; /* color del thumb del scrollbar */
+  border-radius: 6px; /* esquinas redondeadas del thumb */
+
 }
+
 .actividades::-webkit-scrollbar-corner {
-  background-color: #122f49; /* color de la esquina del scrollbar */
+  background-color: #f4f4f4; /* color de la esquina del scrollbar */
 }
 
 mat-card{
