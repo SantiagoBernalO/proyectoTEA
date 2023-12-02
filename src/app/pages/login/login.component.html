@@ -1,56 +1,62 @@
-<div class="general">
-  <mat-card>
-    <mat-card-title>INGRESA</mat-card-title>
-    <mat-card-content>
-      <div class="total">
-        <form [formGroup]="formul" class="form-inline">
-          <p>
-            <mat-form-field>
-              <input type="text" matInput placeholder="Numero de documento" formControlName="documento" />
-              <mat-hint *ngIf="formul.get('documento').errors && formul.get('documento').touched">
-                <p *ngIf="formul.get('documento').hasError('required')">
-                  *Se requiere este campo
-                </p>
-                <p *ngIf="formul.get('documento').hasError('minlength')">
-                  *Minimo 3 caracteres
-                </p>
-                <p *ngIf="formul.get('documento').hasError('maxlength')">
-                  *Maximo 15 caracteres
-                </p>
-                <p *ngIf="formul.get('documento').hasError('pattern')">
-                  El username solo debe contener numero
-                </p>
-              </mat-hint>
-            </mat-form-field>
-          </p>
-          <p>
-            <mat-form-field>
-              <input matInput placeholder="Clave" formControlName="clave" [type]="hide ? 'password' : 'text'">
-              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                [attr.aria-pressed]="hide">
-                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-              </button>
-              <mat-hint *ngIf="formul.get('clave').errors && formul.get('clave').touched">
-                <p *ngIf="formul.get('clave').hasError('required')">
-                  *Se requiere este campo
-                </p>
-                <p *ngIf="formul.get('clave').hasError('minlength')">
-                  *Minimo 3 caracteres
-                </p>
-                <p *ngIf="formul.get('clave').hasError('maxlength')">
-                  *Maximo 15 caracteres
-                </p>
-              </mat-hint>
-            </mat-form-field>
-          </p>
-          <button type="submit" mat-raised-button color="primary" [disabled]="formul.invalid"
-            (click)="ingresar($event)">Ingresar</button>
+<div class="container-fluid" style="height: 100vh; margin: 0;">
+  <div class="row" style="margin: 0; height: 100vh;">
+    <div class="col-md-12 col-lg-12 custom-column">
+      <div class="general">
+        <div class="login">
+          <div class="titulo">
+            <h1>LOGIN</h1>
+          </div>
+          <div class="total">
+            <form [formGroup]="formul" class="form-inline">
+              <p>
+                <mat-form-field style="width: 100%;">
+                  <input type="text" matInput placeholder="Numero de documento" formControlName="documento" style="width: 100%;" />
+                  <mat-hint *ngIf="formul.get('documento').errors && formul.get('documento').touched" style="width: 100%;">
+                    <p *ngIf="formul.get('documento').hasError('required')" style="margin: 0;">
+                      *Se requiere este campo
+                    </p>
+                    <p *ngIf="formul.get('documento').hasError('minlength')" style="margin: 0;">
+                      *Minimo 3 caracteres
+                    </p>
+                    <p *ngIf="formul.get('documento').hasError('maxlength')" style="margin: 0;">
+                      *Maximo 15 caracteres
+                    </p>
+                    <p *ngIf="formul.get('documento').hasError('pattern')" style="margin: 0;">
+                      El username solo debe contener numero
+                    </p>
+                  </mat-hint>
+                </mat-form-field>
+              </p>
+              <p>
+                <mat-form-field style="width: 100%;">
+                  <input matInput placeholder="Clave" formControlName="clave" [type]="hide ? 'password' : 'text'" style="width: 100%;">
+                  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+                  <mat-hint *ngIf="formul.get('clave').errors && formul.get('clave').touched" style="width: 100%;">
+                    <p *ngIf="formul.get('clave').hasError('required')" style="margin: 0;">
+                      *Se requiere este campo
+                    </p>
+                    <p *ngIf="formul.get('clave').hasError('minlength')" style="margin: 0;">
+                      *Minimo 3 caracteres
+                    </p>
+                    <p *ngIf="formul.get('clave').hasError('maxlength')" style="margin: 0;">
+                      *Maximo 15 caracteres
+                    </p>
+                  </mat-hint>
+                </mat-form-field>
+              </p>
+              <button type="submit" mat-raised-button color="primary" [disabled]="formul.invalid"
+                (click)="ingresar($event)">Ingresar</button>
 
-        </form>
-        <div style="text-align: center; padding: 1em;">
-          <a href="recuperarClave" style="text-decoration: none; color: primary;">¿Olividaste tu contraseña?</a>
+            </form>
+            <div style="text-align: center; padding: 1em;">
+              <a href="recuperarClave" style="text-decoration: none; color: primary;">¿Olividaste tu contraseña?</a>
+            </div>
+          </div>
         </div>
       </div>
-    </mat-card-content>
-  </mat-card>
+    </div>
+  </div>
 </div>
