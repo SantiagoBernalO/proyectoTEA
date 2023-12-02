@@ -96,7 +96,7 @@
 }
 
 .imagenTexto p{
-  font-size: 5vh;
+  font-size: 3vh;
   margin:0;
 }
 
@@ -124,7 +124,7 @@
 }
 
 .actividadList .opciones{
-  width: 80%;
+  width: 95%;
   height: 50px;
   display: flex;
   justify-content: center;
