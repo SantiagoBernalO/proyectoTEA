@@ -52,6 +52,8 @@ import { GestionarActividadComponent } from './components/gestionar-actividad/ge
 import { PizarronComponent } from './components/pizarron/pizarron.component';
 import { PanelActividadMotoraPizarronComponent } from './pages/panelActividadMotoraPizarron/panel-actividad-motora-pizarron/panel-actividad-motora-pizarron.component';
 
+import { MatTooltipModule } from '@angular/material/tooltip';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -104,7 +106,7 @@ import { PanelActividadMotoraPizarronComponent } from './pages/panelActividadMot
     MatButtonModule,
     LayoutModule,
     MatDialogModule,
-
+    MatTooltipModule,
   ],
   exports: [],
   providers: [

@@ -126,7 +126,7 @@
             </div>
             <div class="campo_texto">
               <mat-checkbox class="example-margin" color="primary" (change)="aceptarDatos()">Aceptar los
-                <a href="../../../assets/documents/TRATAMIENTO DE DATOS.pdf" target="_blank">Terminos y
+                <a href="/assets/documents/TRATAMIENTO DE DATOS.pdf" target="_blank">Terminos y
                   Condiciones</a></mat-checkbox>
             </div>
             <div class="campo_texto">
@@ -234,6 +234,7 @@
                   </p>
                 </mat-hint>
               </mat-form-field>
+              <mat-icon matTooltip="Nivel 0: No tiene Autismo Nivel - 1: Autismo leve Nivel 2: Autismo moderado Nivel - 3: Autismo severo">info</mat-icon>
             </div>
             <div class="campo_texto">
               <mat-form-field appearance="outline"  >
@@ -244,10 +245,10 @@
                     Se requiere este campo
                   </p>
                   <p *ngIf="formRP.get('edad').hasError('min')" style="margin: 0;">
-                    El valor minimo para la edad es de 6
+                    El valor minimo para la edad es de 5
                   </p>
                   <p *ngIf="formRP.get('edad').hasError('max')" style="margin: 0;">
-                    El valor maximo para la edad es de 11
+                    El valor maximo para la edad es de 40
                   </p>
                   <p *ngIf="formRP.get('edad').hasError('pattern')" style="margin: 0;">
                     La edad debe ser en numeros
@@ -257,7 +258,7 @@
             </div>
             <div class="campo_texto">
               <mat-checkbox class="example-margin" color="primary" (change)="aceptarDatos()">Aceptar los
-                <a href="../../../assets/documents/TRATAMIENTO DE DATOS.pdf" target="_blank">Terminos y
+                <a href="/assets/documents/TRATAMIENTO DE DATOS.pdf" target="_blank">Terminos y
                   Condiciones</a></mat-checkbox>
             </div>
             <div class="campo_texto">

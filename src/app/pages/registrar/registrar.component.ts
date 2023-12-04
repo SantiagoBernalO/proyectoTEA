@@ -52,7 +52,7 @@ export class RegistrarComponent implements OnInit {
         Validators.required,
         Validators.maxLength(20),
         Validators.minLength(3),
-        Validators.pattern('[a-zA-Z ]*'),
+        Validators.pattern('[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\\s]+'),
       ],
     ],
     apellido: [
@@ -62,7 +62,7 @@ export class RegistrarComponent implements OnInit {
         Validators.minLength(4),
         ,
         Validators.maxLength(20),
-        Validators.pattern('[a-zA-Z ]*'),
+        Validators.pattern('[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\\s]+'),
       ],
     ],
     documento: [
@@ -99,7 +99,7 @@ export class RegistrarComponent implements OnInit {
         Validators.required,
         Validators.maxLength(20),
         Validators.minLength(3),
-        Validators.pattern('[a-zA-Z ]*'),
+        Validators.pattern('[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\\s]+'),
       ],
     ],
     apellido: [
@@ -109,7 +109,7 @@ export class RegistrarComponent implements OnInit {
         Validators.minLength(4),
         ,
         Validators.maxLength(20),
-        Validators.pattern('[a-zA-Z ]*'),
+        Validators.pattern('[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\\s]+'),
       ],
     ],
     documento: [
@@ -129,7 +129,7 @@ export class RegistrarComponent implements OnInit {
       this.datosEstudiante.grado_autismo,
       [
         Validators.required,
-        Validators.min(1),
+        Validators.min(0),
         Validators.max(3),
         Validators.pattern('[0-9]*'),
       ],
@@ -138,8 +138,8 @@ export class RegistrarComponent implements OnInit {
       this.datosEstudiante.edad,
       [
         Validators.required,
-        Validators.min(6),
-        Validators.max(11),
+        Validators.min(5),
+        Validators.max(40),
         Validators.pattern('[0-9]*'),
       ],
     ],
