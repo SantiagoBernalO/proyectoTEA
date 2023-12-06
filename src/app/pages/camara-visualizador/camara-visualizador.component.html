@@ -1,0 +1,29 @@
+<div class="container-fluid" style="height: 100vh; background-color:rgb(27, 37, 96);">
+  <div class="row" style="margin: 0; height: 50%;">
+    <div class="col-6">
+      <div *ngIf="showWebcam">
+        <webcam
+          [width]="640"
+          [height]="480"
+          [trigger]="trigger"
+          (imageCapture)="handleImage($event)"
+          (initError)="handleInitError($event)"
+        ></webcam>
+        <button (click)="capture()">Capturar</button>
+      </div>
+    </div>
+    <div class="col-6">
+      <div *ngIf="webcamImage">
+        <img [src]="webcamImage.imageAsDataUrl" alt="Captured Image">
+      </div>
+    </div>
+  </div>
+  <div *ngIf="this.resultado.values.length>1" class="row" style="margin: 0; height: 50%;">
+    <div class="row" style="margin: 0; height: 50%;">
+      <div class="col-3" *ngFor="let element of resultado.values">
+        <p style="text-align: center; color: white;">{{element.name}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+

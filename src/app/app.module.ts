@@ -51,6 +51,8 @@ import { FollowCursorComponent } from './follow-cursor/follow-cursor.component';
 import { GestionarActividadComponent } from './components/gestionar-actividad/gestionar-actividad.component';
 import { PizarronComponent } from './components/pizarron/pizarron.component';
 import { PanelActividadMotoraPizarronComponent } from './pages/panelActividadMotoraPizarron/panel-actividad-motora-pizarron/panel-actividad-motora-pizarron.component';
+import { CamaraVisualizadorComponent } from './pages/camara-visualizador/camara-visualizador.component';
+import {WebcamModule} from 'ngx-webcam';
 
 @NgModule({
   declarations: [
@@ -81,6 +83,7 @@ import { PanelActividadMotoraPizarronComponent } from './pages/panelActividadMot
     GestionarActividadComponent,
     PizarronComponent,
     PanelActividadMotoraPizarronComponent,
+    CamaraVisualizadorComponent,
   ],
   imports: [
     BrowserModule,
@@ -104,7 +107,7 @@ import { PanelActividadMotoraPizarronComponent } from './pages/panelActividadMot
     MatButtonModule,
     LayoutModule,
     MatDialogModule,
-
+    WebcamModule,
   ],
   exports: [],
   providers: [

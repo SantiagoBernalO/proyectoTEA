@@ -1,7 +1,7 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Actividad } from '../_model/Actividad';
 import { PacienteScoreJSon } from '../_model/PacienteScoreJSon';
@@ -11,6 +11,7 @@ import { UsuarioPaciente } from '../_model/UsuarioPaciente';
 import { ResultadoEvaluacionInicial } from 'src/app/_model/ResultadoEvaluacionInicial';
 import { ActividadPECS_Categorias } from '../_model/ActividadPECS_Categorias';
 import { ActividadPECS_Imagenes } from '../_model/ActividadPECS_Imagenes';
+import { WebcamImage } from 'ngx-webcam';
 
 @Injectable({
   providedIn: 'root',
@@ -187,5 +188,21 @@ export class ActividadService {
     return this.http.get<ResultadoEvaluacionInicial[]>(
       `${this.url}/GetScoreStudenEvaluation/${id_card_patient}`
     );
+  }
+
+  //obtener caracteristicas de la imagen
+  postTagsAzureComputerVision(webcamImage: any) {
+    const apiUrl =
+      'https://apiazurecomputervision.cognitiveservices.azure.com/computervision/imageanalysis:analyze?api-version=2023-04-01-preview&features=tags&language=es&gender-neutral-caption=False';
+
+    // Define las cabeceras de la solicitud
+    const headers = new HttpHeaders({
+      'Ocp-Apim-Subscription-Key': 'd55bc9ac6faf483aba2d84e66ff30396',
+      'Content-Type': 'image/jpeg',
+    });
+
+    // Realiza la solicitud HTTP utilizando el método post
+    return this.http.post<any>(apiUrl, webcamImage, { headers });
+
   }
 }

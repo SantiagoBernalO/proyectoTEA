@@ -20,3 +20,8 @@ export class ActividadElemento{
   nombre: string;
   descripcion: string;
 }
+
+export class ActividadComputerVision{
+  name: string;
+  confidence: number;
+}

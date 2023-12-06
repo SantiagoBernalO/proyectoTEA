@@ -44,6 +44,9 @@ export class GuardianService implements CanActivate {
       else if ((url.includes('/pizarron')) && (rol == 1 || rol == 3)) {
         return true;
       }
+      else if ((url.includes('/camaraVisualizador')) && (rol == 1 || rol == 3)) {
+        return true;
+      }
       //Apartados que pueden ver el docente y acudiente
       else if ((url.includes('/graficas')) && (rol == 1 || rol == 2)) {
         return true;

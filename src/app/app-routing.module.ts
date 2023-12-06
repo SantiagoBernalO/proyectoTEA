@@ -22,6 +22,7 @@ import { FormularioCompraComponent } from './pages/formulario-compra/formulario-
 import { RecuperarClaveComponent } from './pages/recuperar-clave/recuperar-clave.component';
 import { NuevaClaveComponent } from './pages/nueva-clave/nueva-clave.component';
 import { PanelActividadMotoraPizarronComponent } from './pages/panelActividadMotoraPizarron/panel-actividad-motora-pizarron/panel-actividad-motora-pizarron.component';
+import { CamaraVisualizadorComponent } from './pages/camara-visualizador/camara-visualizador.component';
 
 const routes: Routes = [
   //Apartados solo para Docentes
@@ -34,6 +35,7 @@ const routes: Routes = [
   {path: 'evaluacionInicial', component: EvaluacionInicialComponent,canActivate: [GuardianService]},
   {path: 'panelActividadesDeImitacion', component: PanelActividadesImitacionComponent,canActivate: [GuardianService]},
   {path: 'pizarron', component: PanelActividadMotoraPizarronComponent,canActivate: [GuardianService]},
+  {path: 'camaraVisualizador', component: CamaraVisualizadorComponent,canActivate: [GuardianService]},
   {path: 'actividad/:idActividad', component: ActividadComponent,canActivate: [GuardianService]},
   {path: 'panelActividades', component: PanelActividadesComponent,canActivate: [GuardianService]},
 
