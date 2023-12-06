@@ -90,7 +90,27 @@ mat-form-field{
   background-color: #506aff;
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
+  .imagenPrincipal{
+    display: none;
+  }
+
+  .textoPrincipal{
+    width: 100%;
+  }
+
+  .textoPrincipal .row{
+    height: auto !important;
+  }
+
+  .textoPrincipal .titulo{
+    font-size: 5vw;
+  }
+
+  .textoPrincipal img{
+    width: 40% !important;
+  }
+
   .formularioGeneral {
     margin-top: 10px;
     width: 100%;
