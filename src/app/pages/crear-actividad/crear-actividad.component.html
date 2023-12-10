@@ -28,7 +28,7 @@
       </div>
     </div>
 
-    <div *ngIf="opcionCreacion==1"  class="col-md-8 col-lg-8 custom-column-center">
+    <div *ngIf="opcionCreacion==1"  class="col-md-8 col-lg-8 custom-column-center" style="height: 100%;">
       <div class="caracteristicasActividad">
         <form [formGroup]="crearActividadImitacion" #frmActividad="ngForm" class="form-inline">
           <div class="campo_texto">
@@ -97,7 +97,7 @@
       </div>
     </div>
 
-    <div *ngIf="opcionCreacion==2" class="col-md-8 col-lg-8 custom-column-center">
+    <div *ngIf="opcionCreacion==2" class="col-md-8 col-lg-8 custom-column-center" style="height: 100%;">
       <div class="caracteristicasActividad">
         <form [formGroup]="crearActividadPECS" #frmActividad="ngForm" class="form-inline">
           <div class="campo_texto">
@@ -117,6 +117,7 @@
                 Debe ingresar solo numero y letras
               </mat-error>
             </mat-form-field>
+            <a href="/#/enlazarNino/1" style="color: white; text-decoration: underline;">no conoces el número de identificación?, accede a tus pacientes/estudiantes enlazados</a>
           </div>
 
           <div class="campo_texto">
@@ -217,8 +218,7 @@
             <form *ngIf="tipo_actividad_Accion=='imagenPECS_categoria'" [formGroup]="actividadImagen" #frmImagen="ngForm"
               class="form-inline">
               <div class="campo_texto">
-                <input type="file" (change)="upload($event)" formControlName="Imagen_cargada" class="formu_btn"
-                  accept="*.png.jpg">
+                <input type="file" (change)="upload($event)" formControlName="Imagen_cargada" class="formu_btn" accept="*.png.jpg">
               </div>
             </form>
 
