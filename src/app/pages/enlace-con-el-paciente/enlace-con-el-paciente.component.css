@@ -1,10 +1,121 @@
-table {
-    width: 80%;
-    position: static;
-    margin: auto;
+.custom-column{
+ padding: 0;
 }
+
+.custom-column{
+  padding: 0;
+}
+.custom-column-center{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tituloGeneral{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.titulo{
+  width: 100%;
+  height: 60%;
+  padding: 3%;
+  font-size: large;
+  text-align: center;
+  border: 2px solid #f7f7f7;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+.tituloPrincipal{
+  color: #ffffff;
+  font-size: xx-large;
+  font-weight: 900;
+  margin: 0;
+}
+.imagenTitulo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.imagenTitulo img{
+  width: 100%;
+}
+.subtitulo{
+  color: #ffffff;
+  font-size: large;
+  padding-top: 3%;
+  margin: 0;
+}
+
+.filtro{
+  width: 80%;
+  height: 15%;
+  position: static;
+  margin: auto;
+}
+
+mat-form-field{
+  width: 100%;
+}
+
+mat-form-field ::ng-deep .mat-form-field-flex{
+  background-color: #c5c5c561 !important;
+}
+
+/* Cambiar el color del texto a blanco en mat-form-field */
+mat-form-field ::ng-deep .mat-form-field-label {
+  color: white !important;
+}
+
+/* Cambiar el color del texto del input */
+mat-form-field ::ng-deep .mat-input-element {
+  color: white !important;
+}
+
+:host ::ng-deep .mat-form-field-appearance-fill .mat-form-field-underline::before {
+  background-color: white !important;
+}
+
+
+.tabla{
+  width: 80%;
+  height: 80%;
+  background-color: rgb(208, 208, 208);
+  position: static;
+  margin: auto;
+  overflow-y: scroll;
+}
+
+table {
+  width: 100%;
+}
+
 form{
     width: 80%;
     position: static;
     margin: auto;
+}
+
+
+@media screen and (max-width: 768px) {
+  .titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tituloPrincipal {
+    font-size: large;
+  }
+
+  .subtitulo{
+    display: none;
+  }
 }

@@ -26,6 +26,9 @@ export class PanelActividadesComponent implements OnInit {
       case 3:
         pagina = 'pizarron';
         break;
+      case 5:
+        pagina = 'camaraVisualizador';
+        break;
     }
     this.router.navigate([pagina]);
   }
