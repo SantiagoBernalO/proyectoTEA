@@ -53,6 +53,7 @@ import { PizarronComponent } from './components/pizarron/pizarron.component';
 import { PanelActividadMotoraPizarronComponent } from './pages/panelActividadMotoraPizarron/panel-actividad-motora-pizarron/panel-actividad-motora-pizarron.component';
 import { CamaraVisualizadorComponent } from './pages/camara-visualizador/camara-visualizador.component';
 import {WebcamModule} from 'ngx-webcam';
+import { ClipboardModule } from '@angular/cdk/clipboard';
 
 @NgModule({
   declarations: [
@@ -108,6 +109,7 @@ import {WebcamModule} from 'ngx-webcam';
     LayoutModule,
     MatDialogModule,
     WebcamModule,
+    ClipboardModule
   ],
   exports: [],
   providers: [
