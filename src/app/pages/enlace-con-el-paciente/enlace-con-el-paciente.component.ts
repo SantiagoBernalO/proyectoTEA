@@ -8,6 +8,7 @@ import { UsuarioPaciente } from 'src/app/_model/UsuarioPaciente';
 import { environment } from 'src/environments/environment';
 import CryptoJS from "crypto-js";
 import { PacienteService } from '../../_service/paciente.service';
+import { Clipboard } from '@angular/cdk/clipboard';
 
 
 @Component({
@@ -20,7 +21,9 @@ export class EnlaceConElPacienteComponent implements OnInit {
   constructor(private serivcioPaciente: PacienteService,
     private route: ActivatedRoute,
     private snackBar: MatSnackBar,
-    private router: Router) { }
+    private router: Router,
+    private clipboard: Clipboard,  // Servicio para usar el portapapeles
+    ) { }
 
   pacientesTabla = new MatTableDataSource<UsuarioPaciente>();
   pacientesPorEnlazar = new MatTableDataSource<UsuarioPaciente>();
@@ -140,6 +143,17 @@ export class EnlaceConElPacienteComponent implements OnInit {
   private openSnackBar(mensaje: string) {
     this.snackBar.open(mensaje, 'Aceptar', {
       duration: 7000,
+      horizontalPosition: 'center',
+      verticalPosition: 'top',
+    });
+  }
+
+  copyToClipboard(documentoPaciente): void {
+    // Se copia el texto del input al portapapeles
+    this.clipboard.copy(documentoPaciente);
+    // Se muestra un snackbar durante 2 segundos en la parte inferior
+    this.snackBar.open('¡Texto copiado al portapapeles!', null, {
+      duration: 2000,
       horizontalPosition: 'center',
       verticalPosition: 'top',
     });

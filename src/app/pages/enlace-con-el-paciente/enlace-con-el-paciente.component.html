@@ -38,17 +38,24 @@
           </ng-container>
           <ng-container matColumnDef="Numero_documento">
             <th mat-header-cell *matHeaderCellDef> Numero de Documento </th>
-            <td mat-cell *matCellDef="let element"> {{element.documento}} </td>
+            <td mat-cell *matCellDef="let element">
+              {{element.documento}}
+              <button mat-icon-button (click)="copyToClipboard(element.documento)" color="primary">
+                <mat-icon>file_copy</mat-icon>
+              </button>
+            </td>
           </ng-container>
           <ng-container matColumnDef="Editar Datos">
             <th mat-header-cell *matHeaderCellDef> Editar Datos </th>
-            <td mat-cell *matCellDef="let element"><button mat-button (click)="perfil(element.documento)">
+            <td mat-cell *matCellDef="let element">
+              <button mat-button (click)="perfil(element.documento)">
                 <mat-icon color="warn">edit</mat-icon>
               </button> </td>
           </ng-container>
           <ng-container matColumnDef="Eliminar Enlace">
             <th mat-header-cell *matHeaderCellDef> Eliminar Enlace </th>
-            <td mat-cell *matCellDef="let element"><button mat-button (click)="eliminarEnlace(element.documento)">
+            <td mat-cell *matCellDef="let element">
+              <button mat-button (click)="eliminarEnlace(element.documento)">
                 <mat-icon color="warn">delete</mat-icon>
               </button> </td>
           </ng-container>
