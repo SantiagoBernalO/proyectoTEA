@@ -67,4 +67,10 @@ export class CamaraVisualizadorComponent implements OnInit {
     return binaryData.buffer;
   }
 
+  reproducir(texto: any){
+    var synth = window.speechSynthesis;
+    var utterance = new SpeechSynthesisUtterance(texto.toString());
+    synth.speak(utterance);
+  }
+
 }

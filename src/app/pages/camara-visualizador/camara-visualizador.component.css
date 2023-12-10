@@ -1,0 +1,33 @@
+::ng-deep video {
+  width: 100% !important;
+  height: auto !important;
+}
+.capturador{
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+.capturador button{
+  width: 100%;
+}
+.custom-column{
+padding: 0;
+}
+
+img{
+  width: 100%;
+}
+
+.custom-column-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slideResultados{
+  margin: 0;
+
+  height: 25%;
+  overflow-y: scroll;
+  background-color: #65656563;
+}
