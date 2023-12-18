@@ -22,6 +22,8 @@ import { FormularioCompraComponent } from './pages/formulario-compra/formulario-
 import { RecuperarClaveComponent } from './pages/recuperar-clave/recuperar-clave.component';
 import { NuevaClaveComponent } from './pages/nueva-clave/nueva-clave.component';
 import { PanelActividadMotoraPizarronComponent } from './pages/panelActividadMotoraPizarron/panel-actividad-motora-pizarron/panel-actividad-motora-pizarron.component';
+import { ImitacionPorPartesComponent } from './pages/imitacion-por-partes/imitacion-por-partes.component';
+import { PanelimitacionPorPartesComponent } from './pages/panelimitacion-por-partes/panelimitacion-por-partes.component';
 
 const routes: Routes = [
   //Apartados solo para Docentes
@@ -35,6 +37,8 @@ const routes: Routes = [
   {path: 'panelActividadesDeImitacion', component: PanelActividadesImitacionComponent,canActivate: [GuardianService]},
   {path: 'pizarron', component: PanelActividadMotoraPizarronComponent,canActivate: [GuardianService]},
   {path: 'actividad/:idActividad', component: ActividadComponent,canActivate: [GuardianService]},
+  {path: 'actividadImitacionPorPartes/:idActividad', component: ImitacionPorPartesComponent,canActivate: [GuardianService]},
+  {path: 'panelactividadImitacionPorPartes', component: PanelimitacionPorPartesComponent,canActivate: [GuardianService]},
   {path: 'panelActividades', component: PanelActividadesComponent,canActivate: [GuardianService]},
 
   //Apartados que pueden ver el docente y acudiente

@@ -8,8 +8,9 @@ export class Actividad {
     Tipo_actividad:number;
     Tipo_actividad_texto:String;
     NuevoEstudiante:PacienteScoreJSon;
-	EstudiantesHicieronActividad:String;
+    EstudiantesHicieronActividad:String;
     Estado_id:number;
+    Imagen_actividad:String;
 }
 
 export class ActividadElementoList{

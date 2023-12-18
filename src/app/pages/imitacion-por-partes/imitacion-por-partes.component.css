@@ -1,0 +1,45 @@
+/*Diseño para el nuevo*/
+.fondoVerbal{
+    background-color: #b1a4ff; 
+    margin-top: 1%;
+    margin-left: 2%;
+    margin-right: 2%;
+    height: 95%;
+    border-radius: 50px;
+}
+.actividadTextoImagen{
+    display: flex;
+    padding-top: 8%;
+    padding-left: 10%;
+    flex-direction: column;
+    height: 100%;
+}
+.textoImagen{
+    display: flex;
+    height: 70%;
+    margin-bottom: 3%;
+}
+.parrafo{
+    display: flex;
+    border: 2px solid #5878ca;
+    width: 50%;
+}
+.imagenGuia{
+    border: 2px solid #5878ca;
+    margin-left: 79px;
+    width: 36%;
+}
+.selecionadoMicrofono{
+    display: flex;
+    align-items: center;
+}
+.fraseSeleccionada{
+    display: flex;
+    margin-left: 5%;
+    border: 2px solid #5878ca;
+    height: 70%;
+    width: 70%;
+    font-size: 2.3vw;
+    justify-content: space-around;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}

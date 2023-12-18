@@ -6,19 +6,15 @@
 
 .activityCards{
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 100%;
-  flex-direction: row;
-  overflow: hidden;
-  position: relative;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 .card :hover{
   cursor: pointer;
 }
 
 @media (max-width: 800px) {
-  .activityCards{
-    flex-direction: column;
-  }
 }

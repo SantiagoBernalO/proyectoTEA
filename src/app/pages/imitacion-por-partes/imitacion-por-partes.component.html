@@ -1,0 +1,28 @@
+<div *ngIf="actividad!=null" class="fondoVerbal">
+    <div *ngIf="actividad.Tipo_actividad==1" class="actividadTextoImagen">
+        <!-- Texto -->
+        <div class="textoImagen">
+            <div class="parrafo">
+                <div *ngFor="let frase of parrafo">
+                    <button type="button" class="btn btn-primary" (click)="reproducirPalabra(frase)">{{frase}}</button>
+                </div>
+            </div>
+            <div class="imagenGuia">
+                <img src="https://statics-cuidateplus.marca.com/cms/2022-11/comer-carne.jpg" alt="jej" style="height: 100%;width: 100%;">
+            </div>
+        </div>
+        <!-- Seleccionado y Microfono -->
+        <div class="selecionadoMicrofono">
+            <!-- Seleccionado -->
+            <div class="fraseSeleccionada">
+                {{seleccionado}}
+            </div>
+            <!-- Micronofono -->
+            <div>
+                <button mat-button id="basic" type="submit" [disabled]="!speech.error" (click)="startService()">
+                    <mat-icon color="warn">mic</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

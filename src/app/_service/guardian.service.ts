@@ -41,6 +41,9 @@ export class GuardianService implements CanActivate {
       else if ((url.includes('/panelActividadesDeImitacion')) && (rol == 1 || rol == 3)) {
         return true;
       }
+      else if ((url.includes('/panelactividadImitacionPorPartes')) && (rol == 1 || rol == 3)) {
+        return true;
+      }
       else if ((url.includes('/pizarron')) && (rol == 1 || rol == 3)) {
         return true;
       }

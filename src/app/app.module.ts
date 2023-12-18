@@ -53,6 +53,8 @@ import { PizarronComponent } from './components/pizarron/pizarron.component';
 import { PanelActividadMotoraPizarronComponent } from './pages/panelActividadMotoraPizarron/panel-actividad-motora-pizarron/panel-actividad-motora-pizarron.component';
 
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { ImitacionPorPartesComponent } from './pages/imitacion-por-partes/imitacion-por-partes.component';
+import { PanelimitacionPorPartesComponent } from './pages/panelimitacion-por-partes/panelimitacion-por-partes.component';
 
 @NgModule({
   declarations: [
@@ -83,6 +85,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     GestionarActividadComponent,
     PizarronComponent,
     PanelActividadMotoraPizarronComponent,
+    ImitacionPorPartesComponent,
+    PanelimitacionPorPartesComponent,
   ],
   imports: [
     BrowserModule,
