@@ -4,7 +4,6 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { NgxSpinnerModule } from 'ngx-spinner';
 
@@ -25,7 +24,6 @@ import { Not404Component } from './pages/not404/not404.component';
 import { CrearActividadComponent } from './pages/crear-actividad/crear-actividad.component';
 import { PanelActividadesComponent } from './pages/panel-actividades/panel-actividades.component';
 import { ActividadDemoComponent } from './pages/actividad-demo/actividad-demo.component';
-import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { PanelResultadosComponent } from './pages/panel-resultados/panel-resultados.component';
 import { EvaluacionInicialComponent } from './pages/evaluacion-inicial/evaluacion-inicial.component';
@@ -97,8 +95,6 @@ import { ClipboardModule } from '@angular/cdk/clipboard';
     MatFormFieldModule,
     MatInputModule,
     JwtModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
     MatProgressBarModule,
     HighchartsChartModule,
     MatGridListModule,

@@ -7,7 +7,6 @@ import { ActividadPECS_Categorias } from 'src/app/_model/ActividadPECS_Categoria
 import { UsuarioAcudiente } from 'src/app/_model/UsuarioAcudiente';
 import { ActividadService } from 'src/app/_service/actividad.service';
 import { environment } from 'src/environments/environment';
-import { AngularFireStorage } from '@angular/fire/storage';
 import { Observable } from 'rxjs';
 import { TypeActivity } from 'src/app/_model/TypeActivity';
 import { ActividadPECS_Imagenes } from 'src/app/_model/ActividadPECS_Imagenes';
@@ -54,7 +53,6 @@ export class CrearActividadComponent implements OnInit {
   constructor(
     private snackBar: MatSnackBar,
     private servicioActividad: ActividadService,
-    private serviceAngularFireBase: AngularFireStorage,
     private SpinnerService: NgxSpinnerService
 
   ) {}
